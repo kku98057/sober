@@ -1,0 +1,24 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-family: "Pretendard-Regular";
+}
+
+ul,
+li {
+  list-style: none;
+}
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  display: block;
+}
+button {
+  all: unset;
+  cursor: pointer;
+}

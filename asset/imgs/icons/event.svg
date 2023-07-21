@@ -1,0 +1,48 @@
+<svg width="29" height="27" viewBox="0 0 29 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="29" height="27" fill="#1E1E1E"/>
+<g id="main #home" clip-path="url(#clip0_851_14967)">
+<rect width="375" height="4001" transform="translate(-173 -3932)" fill="#181818"/>
+<g id="@@@QUICKM">
+<g id="Rectangle 65" filter="url(#filter0_d_851_14967)">
+<path d="M-173 -15.6084H202V66.3916H-173V-15.6084Z" fill="url(#paint0_linear_851_14967)" shape-rendering="crispEdges"/>
+</g>
+<rect id="Rectangle 62" x="-173.441" y="9.43652" width="375" height="60" fill="#00FF41"/>
+<g id="Rectangle 64" filter="url(#filter1_d_851_14967)">
+<path d="M-173.441 6.34668H201.559V66.3467H-173.441V6.34668Z" fill="black"/>
+</g>
+<g id="Frame 7255">
+<path id="Rectangle 1200" d="M-20.4937 20.3877C-20.4937 1.58467 -5.25079 -13.6582 13.5522 -13.6582H14.5659C33.3689 -13.6582 48.6118 1.58467 48.6118 20.3877C48.6118 39.1907 33.3689 54.4336 14.5659 54.4336H13.5522C-5.2508 54.4336 -20.4937 39.1907 -20.4937 20.3877Z" fill="#00FF41"/>
+<path id="Vector" d="M4.69865 1.59277V8.8719M1.05908 5.23234H8.33821M5.42656 19.7906V25.6139M2.51491 22.7023H8.33821M13.4453 10.7397C10.3618 11.622 8.82009 12.0616 8.59735 12.8405C8.52307 13.1012 8.52307 13.3775 8.59735 13.6383C8.82009 14.4171 10.3618 14.8568 13.4453 15.739C14.064 15.9152 14.3726 16.004 14.607 16.1962C14.6913 16.266 14.7675 16.3451 14.8341 16.432C15.019 16.6722 15.0976 16.9852 15.2534 17.6098C16.1487 21.1882 16.5957 22.9774 17.4226 23.2001C17.6701 23.2671 17.9321 23.2671 18.1796 23.2001C19.0065 22.9789 19.4535 21.1882 20.3488 17.6098C20.5046 16.9838 20.5817 16.6722 20.7681 16.4306C20.8348 16.3447 20.911 16.2665 20.9952 16.1976C21.2281 16.004 21.5382 15.9152 22.1555 15.739C25.2418 14.8568 26.7821 14.4171 27.0034 13.6383C27.0777 13.3775 27.0777 13.1012 27.0034 12.8405C26.7821 12.0616 25.2418 11.622 22.1555 10.7397C21.5382 10.5636 21.2296 10.4748 20.9952 10.2826C20.9108 10.2128 20.8347 10.1337 20.7681 10.0468C20.5817 9.80655 20.5046 9.49354 20.3488 8.86899C19.4535 5.29057 19.0065 3.49991 18.1796 3.27862C17.9317 3.21186 17.6705 3.21186 17.4226 3.27862C16.5957 3.49991 16.1487 5.29057 15.2534 8.86899C15.0976 9.495 15.0205 9.80654 14.8341 10.0482C14.7673 10.1341 14.6912 10.2122 14.607 10.2811C14.3741 10.4748 14.0625 10.5636 13.4453 10.7397Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_851_14967" x="-181" y="-25.6084" width="391" height="98" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="-2"/>
+<feGaussianBlur stdDeviation="4"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_851_14967"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_851_14967" result="shape"/>
+</filter>
+<filter id="filter1_d_851_14967" x="-181.441" y="-3.65332" width="391" height="76" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="-2"/>
+<feGaussianBlur stdDeviation="4"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_851_14967"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_851_14967" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_851_14967" x1="14.5" y1="-15.6084" x2="14.5" y2="66.3916" gradientUnits="userSpaceOnUse">
+<stop stop-opacity="0"/>
+<stop offset="1"/>
+</linearGradient>
+<clipPath id="clip0_851_14967">
+<rect width="375" height="4001" fill="white" transform="translate(-173 -3932)"/>
+</clipPath>
+</defs>
+</svg>
