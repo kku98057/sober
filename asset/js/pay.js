@@ -1,3 +1,6 @@
+const items = axios.get("/asset/dummy/item.json");
+console.log(items);
+
 const cards = document.querySelectorAll(".pay_content2-card");
 cards.forEach((card, idx) => {
   card.addEventListener("click", () => {
@@ -17,4 +20,20 @@ const prices = document.querySelectorAll(".price span");
 const lastPrice = document.querySelector(".last_price span");
 let PRICE_ARRAY = [];
 
-lastPrice.innerHTML = PRICE_ARRAY.reduce((a, b) => a + b).toLocaleString();
+// lastPrice.innerHTML = PRICE_ARRAY.reduce((a, b) => a + b).toLocaleString();
+
+// pay버튼
+const payBtn = document.querySelector(".payBtn");
+const payInfo = document.querySelector("#payAgree");
+let isChecked = false;
+function acsessPayment() {
+  if (isChecked) {
+    alert("결제시작");
+  } else {
+    alert("구매진행에 필요한 동의가 필요합니다.");
+  }
+}
+payBtn.addEventListener("click", acsessPayment);
+payInfo.addEventListener("click", (e) => {
+  isChecked = e.target.checked;
+});

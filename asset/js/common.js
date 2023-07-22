@@ -5,49 +5,60 @@ header.innerHTML = `    <div class="container">
 
 </div>
 <div class="header_wrap common_wrap">
-    <div class="logo"><img src="/asset/imgs/icons/logo.svg" alt="logo"></div>
+    <a href="/" class="logo"><img src="/asset/imgs/icons/logo.svg" alt="logo"></a>
     <div class="menu_btn">
         <span>MENU</span>
     </div>
 </div>
 </div>`;
 
-footer.innerHTML = `   <div class="container">
-<div class="common_wrap">
-    <ul>
-        <li>
-            <div class="footer_img footer_img-home">
-                <img src="/asset/imgs/icons/Home.svg" alt="home">
-            </div>
-            <span>home</span>
-        </li>
-        <li>
-            <div class="footer_img footer_img-funding">
-                <img src="/asset/imgs/icons/heart.svg" alt="heart">
-            </div>
-            <span>펀딩</span>
-        </li>
-        <li class="footer_center">
-            <div class="footer_img footer_img-game">
-                <img src="/asset/imgs/icons/game.svg" alt="game">
-            </div>
-            <span>game</span>
-        </li>
-        <li>
-            <div class="footer_img footer_img-basket">
-                <img src="/asset/imgs/icons/basket.svg" alt="basket">
-            </div>
-            <span>장바구니</span>
-        </li>
-        <li>
-            <div class="footer_img footer_img-profile">
-                <img src="/asset/imgs/icons/Profile.svg" alt="Profile">
-            </div>
-            <span>마이페이지</span>
-        </li>
-
-    </ul>
-</div>
+footer.innerHTML = `
+<div class="container">
+    <div class="common_wrap">
+        <ul>
+            <li>
+                <a href="/">
+                    <div class="footer_img footer_img-home">
+                        <img src="/asset/imgs/icons/Home.svg" alt="home">
+                    </div>
+                    <span>home</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="footer_img footer_img-funding">
+                        <img src="/asset/imgs/icons/heart.svg" alt="heart">
+                    </div>
+                    <span>펀딩</span>
+                </a>
+            </li>
+            <li class="footer_center">
+                <a href="/event/roulette.html">
+                    <div class="footer_img footer_img-event">
+                        <img src="/asset/imgs/icons/event.svg" alt="event">
+                    </div>
+                    <span>이벤트</span>
+                </a>
+            </li>
+            <li>
+                <a href="/basket/">
+                <div class="basket_count">0</div>
+                    <div class="footer_img footer_img-basket">
+                        <img src="/asset/imgs/icons/basket.svg" alt="basket">
+                    </div>
+                    <span">장바구니</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="footer_img footer_img-profile">
+                        <img src="/asset/imgs/icons/Profile.svg" alt="Profile">
+                    </div>
+                    <span>마이페이지</span>
+                    </a>
+            </li>
+        </ul>
+    </div>
 </div>`;
 
 const marquee = document.querySelector(".marquee")
@@ -142,3 +153,13 @@ menu_close.addEventListener("click", () => {
   }, 1000);
   tl.reverse();
 });
+
+// back
+function backBtn() {
+  window.history.back();
+}
+
+if (document.querySelector(".back")) {
+  const back = document.querySelector(".back");
+  back.addEventListener("click", backBtn);
+}

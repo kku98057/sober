@@ -6,6 +6,7 @@
   --color-gray: #1f1f1f;
 
   --font-changwon: "CWDangamAsac-Bold";
+  --font-pyeonchang: "PyeongChangPeace-Bold";
   --font-lotteria: "LOTTERIACHAB";
   --font-pretendard: "Pretendard-Regular";
 }
@@ -28,6 +29,13 @@
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/CWDangamAsac-Bold.woff")
     format("woff");
   font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PyeongChangPeace-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
   font-style: normal;
 }
 @font-face {
@@ -82,6 +90,7 @@ section {
   color: transparent;
   -webkit-text-stroke: #00ff41 1px;
 }
+
 .common_title-sub {
   font-size: 14px;
   text-align: center;
@@ -246,7 +255,7 @@ footer ul {
   height: 100%;
   justify-content: space-around;
 }
-footer li {
+footer li a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -254,12 +263,29 @@ footer li {
   gap: 5px;
   flex: 1;
 }
-footer li span {
+footer li {
   text-transform: uppercase;
   font-size: 10px;
   font-weight: 500;
+  position: relative;
 }
-.footer_center {
+.basket_count {
+  width: 12px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(0, -45%);
+  height: 12px;
+  font-size: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer_center a {
   width: 70px;
   height: 70px;
   flex: initial;

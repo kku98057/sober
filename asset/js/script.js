@@ -31,7 +31,7 @@ const slider_items = document.querySelectorAll(".slide");
 const planet_name = document.querySelectorAll(".planet-name");
 const next = document.querySelector(".next");
 const prev = document.querySelector(".prev");
-const names = ["저칼로리", "비건", "논알콜"];
+const names = ["저칼로리", "비건", "논알콜", "과실", "프리미엄", "아이템"];
 let selected_item = 0;
 
 function setItemSlider(index) {
@@ -61,7 +61,6 @@ function planetName() {
 }
 planetName();
 slider_items.forEach((item, idx) => {
-  item.innerHTML = names[idx];
   item.addEventListener("click", () => {
     setItemSlider(idx);
   });
@@ -79,102 +78,109 @@ prev.addEventListener("click", () => {
   planetName();
 });
 
+// popup
+const popup2 = document.querySelector(".popup2");
+const popup2Close = document.querySelector(".popup2 .close");
+popup2Close.addEventListener("click", () => {
+  popup2.style.display = "none";
+});
+
 gsap.registerPlugin(ScrollTrigger);
 let height = document
   .querySelector(".intro_overlay")
   .getBoundingClientRect().height;
 ScrollTrigger.saveStyles(".intro_overlay");
 
-// ScrollTrigger.matchMedia({
-//   "(min-width:421px)": () => {},
-//   "(max-width:420px)": () => {
-//     const loading = gsap
-//       .timeline({
-//         scrollTrigger: {
-//           trigger: ".hero",
-//         },
-//       })
-//       .from(
-//         "video",
-//         {
-//           opacity: 0,
-//           duration: 2,
-//           onComplete: () => {
-//             gsap.set(
-//               ".s1_contents",
-//               {
-//                 zIndex: 1,
-//               },
-//               1
-//             );
+ScrollTrigger.matchMedia({
+  "(min-width:421px)": () => {},
+  "(max-width:420px)": () => {
+    const loading = gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: ".hero",
+        },
+      })
+      .from(
+        "video",
+        {
+          opacity: 0,
+          duration: 2,
+          onComplete: () => {
+            gsap.set(
+              ".s1_contents",
+              {
+                zIndex: 1,
+              },
+              1
+            );
 
-//             const tl = gsap
-//               .timeline({
-//                 scrollTrigger: {
-//                   trigger: ".hero",
-//                   pin: true,
+            const tl = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".hero",
+                  pin: true,
 
-//                   scrub: 0.5,
-//                   end: "+=3000",
-//                 },
-//               })
-//               .to(
-//                 ".overlay_1",
-//                 {
-//                   top: -height,
-//                   duration: 2,
-//                   ease: "none",
-//                 },
-//                 0
-//               )
-//               .to(
-//                 ".overlay_2",
-//                 {
-//                   bottom: -height,
-//                   duration: 2,
-//                   ease: "none",
-//                 },
-//                 0
-//               )
-//               .to(
-//                 ".intro_overlay",
-//                 {
-//                   scale: 0,
-//                   ease: "none",
-//                   duration: 2,
-//                 },
-//                 0
-//               )
+                  scrub: 0.5,
+                  end: "+=3000",
+                },
+              })
+              .to(
+                ".overlay_1",
+                {
+                  top: -height,
+                  duration: 2,
+                  ease: "none",
+                },
+                0
+              )
+              .to(
+                ".overlay_2",
+                {
+                  bottom: -height,
+                  duration: 2,
+                  ease: "none",
+                },
+                0
+              )
+              .to(
+                ".intro_overlay",
+                {
+                  scale: 0,
+                  ease: "none",
+                  duration: 2,
+                },
+                0
+              )
 
-//               .to(
-//                 " .video",
-//                 {
-//                   opacity: 0,
-//                   duration: 0.2,
-//                 },
-//                 1
-//               );
-//             ScrollTrigger.refresh();
-//           },
-//         },
-//         0
-//       )
-//       .from(
-//         ".overlay_1",
-//         {
-//           translateY: "50px",
-//           duration: 1,
-//         },
-//         0
-//       )
-//       .from(
-//         ".overlay_2",
-//         {
-//           translateY: "-50px",
-//           duration: 1,
-//         },
-//         0
-//       )
-//       .to({}, {});
-//   },
-// });
+              .to(
+                " .video",
+                {
+                  opacity: 0,
+                  duration: 0.2,
+                },
+                1
+              );
+            ScrollTrigger.refresh();
+          },
+        },
+        0
+      )
+      .from(
+        ".overlay_1",
+        {
+          translateY: "50px",
+          duration: 1,
+        },
+        0
+      )
+      .from(
+        ".overlay_2",
+        {
+          translateY: "-50px",
+          duration: 1,
+        },
+        0
+      )
+      .to({}, {});
+  },
+});
