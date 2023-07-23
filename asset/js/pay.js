@@ -1,6 +1,3 @@
-const items = axios.get("/asset/dummy/item.json");
-console.log(items);
-
 const cards = document.querySelectorAll(".pay_content2-card");
 cards.forEach((card, idx) => {
   card.addEventListener("click", () => {

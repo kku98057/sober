@@ -79,12 +79,14 @@ prev.addEventListener("click", () => {
 });
 
 // popup
-const popup2 = document.querySelector(".popup2");
-const popup2Close = document.querySelector(".popup2 .close");
-popup2Close.addEventListener("click", () => {
-  popup2.style.display = "none";
-});
+const popup2 = document.querySelectorAll(".popup2,.popup3");
+const popupClose = document.querySelectorAll(".popup2 .close, .popup3 .close");
 
+popupClose.forEach((close, indx) => {
+  close.addEventListener("click", () => {
+    popup2[indx].style.display = "none";
+  });
+});
 gsap.registerPlugin(ScrollTrigger);
 let height = document
   .querySelector(".intro_overlay")
@@ -184,3 +186,25 @@ ScrollTrigger.matchMedia({
       .to({}, {});
   },
 });
+
+// timer
+function updateTimer() {
+  const future = new Date("2023/07/26 00:00:00");
+  const now = new Date();
+
+  const diff = future - now;
+
+  const totalHours = Math.floor(diff / (1000 * 60 * 60));
+  const mins = Math.floor((diff / (1000 * 60)) % 60);
+  const secs = Math.floor((diff / 1000) % 60);
+
+  const h = totalHours.toString().padStart(2, "0");
+  const m = mins.toString().padStart(2, "0");
+  const s = secs.toString().padStart(2, "0");
+
+  document.querySelector(
+    ".timer"
+  ).innerHTML = `  <span class="hours">${h}</span>:<span class="minute">${m}</span>:<span class="second">${s}</span>`;
+}
+
+setInterval(updateTimer, 1000);
