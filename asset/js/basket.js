@@ -1,7 +1,12 @@
+// const token = Cookies.get("token");
+// if (!token) {
+//   window.location.href = "/auth/needLogin.html";
+// }
+
 const basketContents = document.querySelector(".basket_contents");
 const getItems = async () => {
   return axios
-    .get("/asset/dummy/item.json")
+    .get("/asset/dummy/basket.json")
     .then((res) => res.data)
     .catch((error) => console.error(error));
 };

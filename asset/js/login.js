@@ -1,11 +1,14 @@
-const REDIRECT_URL = "http://127.0.0.1:5501/auth/login.html";
+//신규회원인경우
+const REDIRECT_URL_NEW = "http://127.0.0.1:5501/auth/signup/complete.html";
+// 이미 회원인 경우 'http://sobermarket.co.kr/main/main.php'
+const REDIRECT_URL = "http://127.0.0.1:5501/auth/signup/complete.html";
+
 function loginWithKakao() {
   Kakao.Auth.authorize({
-    redirectUri: REDIRECT_URL,
+    redirectUri: REDIRECT_URL_NEW,
     state: "userme",
   });
 }
-
 function requestUserInfo() {
   Kakao.API.request({
     url: "/v2/user/me",
@@ -15,46 +18,111 @@ function requestUserInfo() {
   })
     .then(function (res) {
       alert(JSON.stringify(res));
+      Cookies.set("name", "value");
     })
     .catch(function (err) {
       alert("failed to request user information: " + JSON.stringify(err));
     });
 }
+//로그인 토큰
 
-// 아래는 데모를 위한 UI 코드입니다.
+const code = new URL(window.location.href).searchParams.get("code");
+if (code) {
+  const getToken = () => {
+    return axios
+      .post(
+        "https://kauth.kakao.com/oauth/token",
+        {
+          grant_type: "authorization_code",
+          client_id: "b2565aa45aaaf613c93d24212cbbde02",
+          redirect_uri: REDIRECT_URL,
+          code: code,
+        },
+        {
+          headers: {
+            "Content-type": " application/x-www-form-urlencoded;charset=utf-8",
+          },
+        }
+      )
+      .then((res) => {
+        const { data } = res;
+        const { access_token } = data;
+        if (access_token) {
+          axios
+            .post(
+              "https://kapi.kakao.com/v2/user/me",
+              {},
+              {
+                headers: {
+                  Authorization: `Bearer ${access_token}`,
+                  "Content-type":
+                    "application/x-www-form-urlencoded;charset=utf-8",
+                },
+              }
+            )
+            .then((res) => {
+              console.log(res);
+              return res;
+            });
+        }
+      });
+  };
 
-function displayToken() {
-  var token = getCookie("authorize-access-token");
-  if (token) {
-    Kakao.Auth.setAccessToken(token);
-    document.querySelector("#token-result").innerText =
-      "login success, ready to request API";
-    document.querySelector("button.api-btn").style.visibility = "visible";
+  (async () => {
+    const token = await getToken();
+  })();
+}
+
+const loginData = document.querySelectorAll("#email, #pw")
+  ? document.querySelectorAll("#email, #pw")
+  : null;
+
+let userInfo = {
+  email: "",
+  pw: "",
+};
+
+if (loginData) {
+  const LOGIN_URL = "로그인 api";
+  const TOKEN_ULR = "토큰 api";
+  const loginBtn = document.querySelector(".email_login_btn");
+  loginData.forEach((form) => {
+    form.addEventListener("input", (e) => {
+      const { value, name } = e.target;
+      userInfo = {
+        ...userInfo,
+        [name]: value,
+      };
+      if (userInfo.email !== "" && userInfo.pw !== "") {
+        loginBtn.classList.add("active");
+      } else {
+        loginBtn.classList.remove("active");
+      }
+    });
+  });
+  // 로그인 하기
+  if (loginBtn) {
+    loginBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      return axios.post(`${LOGIN_URL}`, loginData, {}).then((res) => {
+        // 토큰받기
+        const { token } = res.data;
+        axios
+          .post(
+            `${TOKEN_ULR}`,
+            {},
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-type":
+                  "application/x-www-form-urlencoded;charset=utf-8",
+              },
+            }
+          )
+          .then((res) => {
+            Cookies.set("token", res.data.token);
+          });
+      });
+    });
   }
 }
-displayToken();
-function getCookie(name) {
-  var parts = document.cookie.split(name + "=");
-  if (parts.length === 2) {
-    return parts[1].split(";")[0];
-  }
-}
-// const code = new URL(window.location.href).searchParams.get("code");
-// if (code) {
-//   const getToken = async () => {
-//     axios
-//       .get("https://kauth.kakao.com/oauth/authorize", {
-//         grant_type: "authorization_code",
-//         response_type: code,
-//         redirect_uri: REDIRECT_URL,
-//         client_id: "b2565aa45aaaf613c93d24212cbbde02",
-//       })
-//       .then((res) => res.data)
-//       .catch((error) => console.error(error));
-//   };
-
-//   (async () => {
-//     const token = await getToken();
-//     console.log(token);
-//   })();
-// }

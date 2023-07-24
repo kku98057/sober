@@ -17,31 +17,30 @@
 
 <body>
     <div class="wrap">
-        <!-- <header></header>
+        <header></header>
         <div class="menu">
-        </div> -->
+        </div>
         <main>
-            <section class="signup">
+            <section class="login">
                 <div class="container">
-                    <div class="signup_wrap">
-                        <div class="signup_img">
-                            <img src="/asset/imgs/icons/logo-color.png" alt="logo-color">
+                    <div class="login_wrap">
+                        <h3>로그인이 필요한 서비스에요!</h3>
+                        <div class="login_img">
+                            <img src="/asset/imgs/login/login_char.svg" alt="login_char">
                         </div>
-                        <div class="sign_btns">
-                            <button class="kakao_start" type="button" onclick="loginWithKakao()">
-                                <img src="/asset/imgs/icons/kakao.svg" alt="kakao">
-                                <span>카카오 3초만에 시작하기</span>
-                            </button>
-                            <button class="normal_start" type="button">
-                                <a href="/auth/login_mail.html">이메일 아이디로 로그인하기 </a>
-                            </button>
+                        <p>카카오로 간편하게 로그인하고<br>
+                            쏘버 서비스를 이용해보세요!</p>
+                        <div class="login_btns">
+                            <button type="button" onclick="loginWithKakao()"><img src="/asset/imgs/login/kakao.png" alt="kakao"></button>
+                            <a href="/auth/login.html" class="login_normal"><span>일반 로그인</span></a>
                         </div>
-                        <a class="use_market" href="/auth/signup/agree.html">회원가입하고 쏘버마켓 이용하기</a>
+                        <a class="signup_btn" href="/auth/signup/agree.html">회원가입</a>
                     </div>
+                    <p id="token-result"></p>
                 </div>
             </section>
         </main>
-        <!-- <footer></footer> -->
+        <footer></footer>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -49,7 +48,7 @@
     <script src="
     https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
     "></script>
-    <!-- <script src="/asset/js/common.js"></script> -->
+    <script src="/asset/js/common.js"></script>
     <script src="/asset/js/login.js"></script>
 </body>
 

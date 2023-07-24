@@ -108,7 +108,16 @@
     transform: translate(0, -10%) rotate(10deg);
   }
 }
-
+.panel {
+  width: 246px;
+  height: 246px;
+  position: relative;
+}
+.rouletter-wacu {
+  transform-origin: center;
+  transition-timing-function: ease-in-out;
+  transition: 2s;
+}
 .roulette_game {
   display: flex;
   flex-direction: column;
@@ -140,6 +149,35 @@
   font-style: normal;
   font-weight: 700;
   color: #000000;
+}
+.startBtn2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 6px solid #000;
+  background-color: var(--color-green1);
+  height: 60px;
+  border-radius: 80px;
+}
+.startBtn2 span {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  font-family: var(--font-changwon);
+  color: #000;
+}
+.pin {
+  width: 26px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
 }
 .invite {
   margin-top: 35px;
@@ -193,12 +231,21 @@
   width: 100%;
   max-width: 350px;
   margin: 0 auto;
-  background: url(/asset/imgs/login/kakao.png) no-repeat center/cover;
+  background-color: #fee500;
+  border-radius: 25px;
   height: 52px;
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   margin-top: 27px;
+}
+.inviteBtn img {
+  position: absolute;
+  width: 20px;
+  top: 50%;
+  left: 20px;
+  transform: translate(0, -50%);
 }
 .inviteBtn span {
   font-size: 16px;
