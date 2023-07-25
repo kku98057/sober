@@ -21,6 +21,9 @@
             <section class="signup">
                 <div class="container">
                     <div class="signup_wrap">
+                        <a href="/auth/login_mail.html" class="close">
+                            <img src="/asset/imgs/icons/close-noline.svg" alt="close-noline">
+                        </a>
                         <h3>이메일 찾기</h3>
                         <form action="" class="sign_2">
                             <label for="phone">
@@ -29,6 +32,9 @@
                                     <input type="number" name="phone" placeholder="('-'를 빼고 입력해주세요.)" id="phone">
                                     <div class="sign_btns phone_btn ">
                                         <button type="button"><span>인증받기</span></button>
+                                    </div>
+                                    <div class="sign_btns re_btn">
+                                        <button type="button"><span>재전송</span></button>
                                     </div>
                                 </div>
                             </label>
@@ -42,8 +48,8 @@
                                 </div>
 
                             </label>
-                            <div class="sign_btns sign_2_btn ">
-                                <button type="submit"><span>다음</span></button>
+                            <div class="sign_btns findPwBtn">
+                                <button type="button"><span>다음</span></button>
                             </div>
                         </form>
 
@@ -58,7 +64,7 @@
     <script src="
     https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
     "></script>
-    <script src="/asset/js/signup.js"></script>
+    <script src="/asset/js/find.js"></script>
 </body>
 
 </html>

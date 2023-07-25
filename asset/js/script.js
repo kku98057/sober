@@ -312,6 +312,8 @@ const getReview = async () => {
   review_contents.innerHTML = html;
   const reviewSlider = new Swiper(".review_slider", {
     spaceBetween: 10,
-    slidesPerView: 1.07,
+    slidesOffsetBefore: 20,
+    slidesOffsetAfter: 20,
+    slidesPerView: 1.1,
   });
 })();

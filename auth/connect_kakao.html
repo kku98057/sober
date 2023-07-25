@@ -21,22 +21,31 @@
             <section class="signup">
                 <div class="container">
                     <div class="signup_wrap">
-
-                        <h3>비밀번호 재설정</h3>
+                        <a href="/auth/login_mail.html" class="close">
+                            <img src="/asset/imgs/icons/close-noline.svg" alt="close-noline">
+                        </a>
+                        <h3>내 계정을<br>
+                            카카오계정에 연결할게요!</h3>
+                        <div class="account">
+                            <span class="account_id">sob**@email.com</span>
+                            <p>이미 가입된 내 계정과 비밀번호를 입력하고<br>
+                                카카오 계정에 연결해주세요.</p>
+                        </div>
                         <form action="" class="sign_3">
+                            <label for="email-id">
+                                <span>이메일 아이디</span>
+                                <input type="email" id="email-id" placeholder="example@example.com" required>
+                            </label>
                             <label for="password-check1">
                                 <span>비밀번호</span>
                                 <input type="password" id="password-check1" autocomplete="on" required placeholder="영문, 숫자, 특수문자 포함 8자 이상">
+                                <p class="check_comment_1"></p>
                             </label>
-                            <label for="password-check2">
-                                <span>비밀번호 확인</span>
-                                <input type="password" id="password-check2" autocomplete="on" required placeholder="영문, 숫자, 특수문자 포함 8자 이상">
-                            </label>
-                            <div class="sign_btns sign_3_btn">
+
+                            <div class="sign_btns sign_3_btn ">
                                 <button type="submit"><span>완료</span></button>
                             </div>
                         </form>
-
                     </div>
             </section>
         </main>
@@ -48,7 +57,7 @@
     <script src="
     https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
     "></script>
-    <script src="/asset/js/find.js"> </script>
+    <script src="/asset/js/connect_kakao.js"></script>
 </body>
 
 </html>

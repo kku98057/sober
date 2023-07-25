@@ -316,7 +316,10 @@ svg {
 /* sale */
 .sale {
   padding-bottom: 72px;
-  background-color: #181818;
+  background-color: #2b2a2a;
+}
+.sale .container {
+  padding: 0;
 }
 .sale_slides {
   margin-top: 28px;
@@ -482,7 +485,7 @@ svg {
   padding-bottom: 150px;
 }
 .review .container {
-  padding-left: 14px;
+  padding: 0;
 }
 .review_slider {
   overflow: hidden;

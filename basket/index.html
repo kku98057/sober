@@ -22,96 +22,18 @@
                         <img class="back_arrow" src="../asset/imgs/icons/arrow.svg" alt="back_btn" />
                     </button>
                     <h3 class="product_text">장바구니</h3>
-                    <ul class="basket_contents">
-                        <!-- <li class="basket_list">
-                            <div class="basket_list-img">
-                                <img src="/asset/imgs/beer.png" alt="beer">
-                            </div>
-                            <div class="basket_list-text">
-                                <div class="basket_list-top">
-                                    <div class="basket_text">
-                                        <h3>하이트 제로0제로0제로0제로0제로0.0 350ml 12캔1</h3>
-                                        <div class="basket_list-close">
-                                            <img src="/asset/imgs/icons/close.svg" alt="close">
-                                        </div>
-                                    </div>
-                                    <h4 class="price">29,000<span>원</span></h4>
-                                </div>
+                    <div class="basket_bundle">
+                        <h3 class="basket_product_h">묶음배송 상품</h3>
+                        <ul class="basket_contents bundle_product">
 
-                                <div class="count">
-                                    <button class="minus" type="button"><img src="/asset/imgs/icons/minus.svg" alt="minus"></button>
-                                    <span class="quantity">1</span>
-                                    <button class="plus" type="button"><img src="/asset/imgs/icons/plus.svg" alt="plus"></button>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="basket_list">
-                            <div class="basket_list-img">
-                                <img src="/asset/imgs/beer.png" alt="beer">
-                            </div>
-                            <div class="basket_list-text">
-                                <div class="basket_list-top">
-                                    <div class="basket_text">
-                                        <h3>하이트 제로0제로0제로0제로0제로0.0 350ml 12캔1</h3>
-                                        <div class="basket_list-close">
-                                            <img src="/asset/imgs/icons/close.svg" alt="close">
-                                        </div>
-                                    </div>
-                                    <h4 class="price">29,000<span>원</span></h4>
-                                </div>
+                        </ul>
+                    </div>
+                    <div class="basket_individual">
+                        <h3 class="basket_product_h">개별 상품(골라담기)</h3>
+                        <ul class="basket_contents individual_product">
 
-                                <div class="count">
-                                    <button class="minus" type="button"><img src="/asset/imgs/icons/minus.svg" alt="minus"></button>
-                                    <span class="quantity">1</span>
-                                    <button class="plus" type="button"><img src="/asset/imgs/icons/plus.svg" alt="plus"></button>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="basket_list">
-                            <div class="basket_list-img">
-                                <img src="/asset/imgs/beer.png" alt="beer">
-                            </div>
-                            <div class="basket_list-text">
-                                <div class="basket_list-top">
-                                    <div class="basket_text">
-                                        <h3>하이트 제로0제로0제로0제로0제로0.0 350ml 12캔1</h3>
-                                        <div class="basket_list-close">
-                                            <img src="/asset/imgs/icons/close.svg" alt="close">
-                                        </div>
-                                    </div>
-                                    <h4 class="price">29,000<span>원</span></h4>
-                                </div>
-
-                                <div class="count">
-                                    <button class="minus" type="button"><img src="/asset/imgs/icons/minus.svg" alt="minus"></button>
-                                    <span class="quantity">1</span>
-                                    <button class="plus" type="button"><img src="/asset/imgs/icons/plus.svg" alt="plus"></button>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="basket_list">
-                            <div class="basket_list-img">
-                                <img src="/asset/imgs/beer.png" alt="beer">
-                            </div>
-                            <div class="basket_list-text">
-                                <div class="basket_list-top">
-                                    <div class="basket_text">
-                                        <h3>하이트 제로0제로0제로0제로0제로0.0 350ml 12캔1</h3>
-                                        <div class="basket_list-close">
-                                            <img src="/asset/imgs/icons/close.svg" alt="close">
-                                        </div>
-                                    </div>
-                                    <h4 class="price">29,000<span>원</span></h4>
-                                </div>
-
-                                <div class="count">
-                                    <button class="minus" type="button"><img src="/asset/imgs/icons/minus.svg" alt="minus"></button>
-                                    <span class="quantity">1</span>
-                                    <button class="plus" type="button"><img src="/asset/imgs/icons/plus.svg" alt="plus"></button>
-                                </div>
-                            </div>
-                        </li> -->
-                    </ul>
+                        </ul>
+                    </div>
                     <p class="alarm"><span class="alaram_count"></span>캔 더 구매시 더 싸게 6캔 묶음 배송 가능!</p>
                     <div class="amount">
                         <div class="amount_normal">
@@ -119,7 +41,8 @@
                             <span class="normal_price">0원</span>
                         </div>
                         <div class="delivery">
-                            <span>배송비</span>  <h3 class="delivery_hint"> 50,000원 이상 구매시 배송비 무료</h3> 
+                            <span>배송비</span>
+                            <h3 class="delivery_hint"> 50,000원 이상 구매시 배송비 무료</h3>
                             <span class="delivery_price">3,000원</span>
                         </div>
                         <div class="amount_sale">
@@ -144,21 +67,12 @@
                             <span class="last_price">0원</span>
                         </div>
                     </div>
-                    <button class="pay_btn" type="button"><span>결제하기</span></button>
+                    <button class="pay_btn" type="button"><span>주문하기</span></button>
                 </div>
             </section>
-            <!-- <div class="popup">
-                <div class="popup_wrap">
-                    <h4 class="popup_text">2캔 더 구매 시
-                        6캔 <span>묶음 배송</span> 가능!</h4>
-                    <div class="popup_btns">
-                        <button class="popup_btns_done" type="button"><span>괜찮아요!</span></button>
-                        <button class="popup_btns_more" type="button"><span>더 담을게요!</span></button>
-                    </div>
-                </div>
-            </div> -->
         </main>
-        <footer></footer>
+        <!-- <footer></footer> -->
+        <div class="bottomTab"></div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>

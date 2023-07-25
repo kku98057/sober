@@ -18,8 +18,8 @@
   letter-spacing: 0.6px;
 }
 .basket {
-  padding-top: 100px;
-  padding-bottom: 120px;
+  padding-top: 10px;
+  padding-bottom: 50px;
 }
 .basket .container {
   padding: 0 17px;
@@ -34,8 +34,19 @@
   display: flex;
   gap: 20px;
 }
-.basket_list:last-child {
-  border: 0;
+.basket_individual {
+  margin-top: 50px;
+}
+.basket_product_h {
+  margin-bottom: 30px;
+  padding: 3px 11px;
+  border-radius: 50px;
+  background-color: var(--color-green1);
+  display: inline-block;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  color: #000;
 }
 .basket_list-img {
   width: 100px;
@@ -102,32 +113,39 @@
   font-weight: 500;
 }
 .alarm {
+  margin: 0 auto;
   display: none;
   position: relative;
-  background-color: #00FF41;
+  background-color: #00ff41;
   font-size: 12px;
   font-style: normal;
+  height: 24px;
   font-weight: 600;
   color: #000;
   margin-top: 30px;
-  margin-bottom: 20px;
+
   text-align: center;
+
+  align-items: center;
   justify-content: center;
+  max-width: 300px;
   border-radius: 10px;
-  padding: 2px 2px;
 }
 
 .alarm:after {
   border-top: 0px solid transparent;
   border-left: 17px solid transparent;
   border-right: 17px solid transparent;
-  border-bottom: 17px solid #00FF41;
+  border-bottom: 17px solid #00ff41;
   content: "";
-  position:absolute;
-  top:-14px;
-  left:180px;
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
-
+.amount {
+  margin-top: 44px;
+}
 .amount > div {
   display: flex;
   align-items: center;
@@ -157,7 +175,7 @@
   max-width: 420px;
   height: 60px;
   background-color: var(--color-green1);
-  border-radius: 8px;
+  border-radius: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -192,11 +210,10 @@
   display: none;
 }
 
-
 .amount .special span,
 .amount .coupon span,
 .amount .sober_point span {
-  color: #00FF41;
+  color: #00ff41;
   font-size: 12px;
   font-weight: 400;
 }

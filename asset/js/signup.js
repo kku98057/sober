@@ -61,6 +61,7 @@ if (sign_2) {
   const phoneBtn = document.querySelector(".phone_btn");
   const checkBtn = document.querySelector(".check_btn");
   const sign_2_btn = document.querySelector(".sign_2_btn");
+  const re_btn = document.querySelector(".re_btn");
   let phoneAuthorization = false;
   phone.addEventListener("input", (e) => {
     // 최대길이
@@ -70,7 +71,6 @@ if (sign_2) {
     if (value.length === 11) {
       phoneBtn.classList.add("active");
       phoneAuthorization = true;
-      authorizationCheck();
     } else {
       phoneBtn.classList.remove("active");
       phoneAuthorization = false;
@@ -98,28 +98,42 @@ if (sign_2) {
       alaram("인증번호를 입력해주세요.");
       document.querySelector(".sign_2 label:nth-child(2)").style.display =
         "block";
+      re_btn.style.display = "flex";
+      phoneBtn.style.display = "none";
     } else {
       alaram("휴대폰 번호를 입력해주세요.");
     }
   });
+  re_btn.addEventListener("click", () => {
+    alert("인증번호를 재전송하였습니다. 새로운 인증번호를 입력해주세요.");
+    numb.value = "";
+    authorizationNumber = null;
 
+    checkBtn.style.pointerEvents = "initial";
+    sign2Checking = false;
+
+    phone.removeAttribute("readonly");
+    numb.removeAttribute("readonly");
+    phoneBtn.style.pointerEvents = "initial";
+    sign_2_btn.classList.remove("active");
+    checkBtn.classList.remove("active");
+  });
   // 인증번호 확인 버튼
-  function authorizationCheck() {
-    checkBtn.addEventListener("click", () => {
+  checkBtn.addEventListener("click", () => {
+    if (phoneAuthorization && authorizationNumber !== null) {
       // 인증번호 확인함수
-      if (authorizationNumber !== null) {
-        alert("인증 완료되었습니다.");
-        checkBtn.style.pointerEvents = "none";
-        sign2Checking = true;
-        phone.setAttribute("readonly", true);
-        numb.setAttribute("readonly", true);
-        phoneBtn.style.pointerEvents = "none";
-        sign_2_btn.classList.add("active");
-      } else {
-        alert("인증번호를 입력해주세요.");
-      }
-    });
-  }
+      alert("인증 완료되었습니다.");
+      checkBtn.style.pointerEvents = "none";
+      sign2Checking = true;
+      phone.setAttribute("readonly", true);
+      numb.setAttribute("readonly", true);
+      phoneBtn.style.pointerEvents = "none";
+      sign_2_btn.classList.add("active");
+      return;
+    } else {
+      alert("인증번호를 입력해주세요.");
+    }
+  });
   function sign2Next() {
     sign_2_btn.addEventListener("click", (e) => {
       e.preventDefault();
@@ -146,6 +160,8 @@ if (sign_3) {
   const emailFormSpan = emailForm.querySelector("span");
   const passwordCheck2Span = pwForm1.querySelector("span");
   const sign_3_btn = document.querySelector(".sign_3_btn");
+  const check_comment_1 = document.querySelector(".check_comment_1");
+  const check_comment_2 = document.querySelector(".check_comment_2");
   const PwRegex = /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*]).{8,}$/;
   let EMAIL_MESSAGE = "";
   let pwComplete = false;
@@ -165,6 +181,7 @@ if (sign_3) {
       EMAIL_MESSAGE = "이메일이 올바르지 않습니다.";
     }
     emailFormSpan.innerHTML = EMAIL_MESSAGE;
+    isConfirm();
   });
   // 비밀번호 체크
 
@@ -172,22 +189,26 @@ if (sign_3) {
     // 비밀번호가 정규식에 일치하는지 확인합니다.
     const isValid =
       PwRegex.test(passwordCheck1.value) || PwRegex.test(passwordCheck2.value);
-
     if (!isValid) {
-      MESSAGE = "비밀번호가 형식에 맞지 않습니다.";
+      check_comment_1.innerHTML = "비밀번호가 형식에 맞지 않습니다.";
+      check_comment_1.classList.add("active");
       return;
     } else {
-      sign_3_btn.style.pointerEvents = "initial";
+      check_comment_1.innerHTML = "비밀번호가 형식에 맞습니다.";
+      check_comment_1.classList.remove("active");
     }
     // 비밀번호가 서로 일치하는지 확인합니다.
     if (passwordCheck1.value === passwordCheck2.value) {
       pwComplete = true;
-      sign_3_btn.classList.add("active");
+      check_comment_2.classList.remove("active");
+      check_comment_2.innerHTML = "비밀번호가 일치합니다.";
     } else {
-      MESSAGE = "비밀번호가 일치하지 않습니다.";
+      // pw 코멘트
+      check_comment_2.classList.add("active");
+      check_comment_2.innerHTML = "비밀번호가 일치하지 않습니다.";
       pwComplete = false;
-      sign_3_btn.classList.remove("active");
     }
+    isConfirm();
   }
 
   passwordCheck1.addEventListener("input", isPasswordMatch);
@@ -198,16 +219,28 @@ if (sign_3) {
     e.preventDefault();
     completeBtn();
   });
+
   function completeBtn() {
-    if (pwComplete && emailCheck && emailCheck) {
+    if (pwComplete && emailCheck) {
       window.location.href = "/auth/signup/complete.html";
+    }
+  }
+
+  // 이메일 및 비밀번호 모두 통과
+  function isConfirm() {
+    if (pwComplete && emailCheck) {
+      sign_3_btn.style.pointerEvents = "initial";
+      sign_3_btn.classList.add("active");
+    } else {
+      sign_3_btn.style.pointerEvents = "none";
+      sign_3_btn.classList.remove("active");
     }
   }
 }
 function alaram(message) {
   return alert(message);
 }
-// 최대길이 함수
+// 최대입력길이 함수
 function maxLength(max) {
   if (phone.value.length > max) {
     phone.value = phone.value.slice(0, max); // 초과된 부분을 잘라냅니다

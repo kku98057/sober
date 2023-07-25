@@ -1,3 +1,6 @@
+section {
+  background-color: #000;
+}
 .login {
   height: 100vh;
 }
@@ -223,23 +226,7 @@
 .sign_1 input[type="checkbox"] {
   display: none;
 }
-.circle {
-  width: 15px;
-  height: 15px;
-  border-radius: 50px;
-  position: relative;
-  border: 1px solid #999999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.circle div {
-  transform: scale(0.5);
-  background-color: #999999;
-  border-radius: 50px;
-  width: 100%;
-  height: 100%;
-}
+
 .sign_1 input[type="checkbox"]:checked ~ .circle {
   border: 1px solid #fff;
 }
@@ -299,15 +286,24 @@
   align-items: center;
   gap: 15px;
 }
+.re_btn {
+  display: none;
+}
+
 .phone_btn button,
-.check_btn button {
+.check_btn button,
+.re_btn button {
   background-color: #666;
   width: 120px;
   height: 50px;
   border-radius: 25px;
 }
+.re_btn button {
+  background-color: var(--color-green1);
+}
 .phone_btn span,
-.check_btn span {
+.check_btn span,
+.re_btn span {
   font-size: 15px;
   font-style: normal;
   font-weight: 700;
@@ -324,6 +320,9 @@
 .sign_2_btn.active span,
 .sign_3_btn.active span,
 .findPwBtn.active span {
+  color: #000;
+}
+.re_btn span {
   color: #000;
 }
 .sign_2_btn button,
@@ -359,6 +358,15 @@
 }
 .sign_3_btn {
   pointer-events: none;
+}
+.check_comment_1,
+.check_comment_2 {
+  font-size: 12px;
+  color: var(--color-green1);
+}
+.check_comment_1.active,
+.check_comment_2.active {
+  color: #e93724;
 }
 
 /* complete */
@@ -403,4 +411,115 @@
   font-style: normal;
   color: #000;
   font-weight: 700;
+}
+
+/* find popup */
+.popup.active {
+  display: flex;
+}
+.popup_wrap {
+  border-radius: 25px;
+  padding: 55px 10px;
+  display: flex;
+  border: 0;
+  height: auto;
+}
+.popup_title {
+  text-align: center;
+}
+.popup_title h3 {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+
+  letter-spacing: -0.18px;
+}
+.popup_title p {
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 10px;
+
+  letter-spacing: -0.13px;
+}
+.popup_btn {
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  background-color: var(--color-green2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 28px;
+  color: #000;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* email_found */
+.find {
+  height: 100vh;
+}
+.find_wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.find_wrap h3 {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  text-align: center;
+}
+.find_wrap p {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  margin: 50px 0 55px 0;
+  text-align: center;
+}
+.login_btn,
+.not_found_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 25px;
+  background-color: var(--color-green2);
+  height: 50px;
+  color: #000;
+  font-size: 15px;
+  font-weight: 700;
+}
+.not_found_btn {
+  margin-top: 40px;
+}
+.close {
+  width: 19px;
+  position: absolute;
+  top: 40px;
+  right: 20px;
+}
+
+/* connect_kakao */
+.account {
+  width: 100%;
+  margin-bottom: 28px;
+}
+.account_id {
+  font-size: 20px;
+  font-style: normal;
+  color: var(--color-green1);
+  font-weight: 700;
+}
+.account p {
+  font-size: 15px;
+  font-style: normal;
+  margin-top: 11px;
+  font-weight: 400;
+  color: #999999;
 }

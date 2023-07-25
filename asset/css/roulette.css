@@ -1,5 +1,8 @@
+.wrap {
+  background-color: #000;
+}
 .roulette {
-  padding-top: 160px;
+  padding-top: 60px;
 }
 .roulette_title {
   margin-bottom: 30px;

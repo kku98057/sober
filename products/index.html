@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/asset/css/reset.css">
+    <link rel="stylesheet" href="/asset/css/common.css">
+    <link rel="stylesheet" href="/asset/css/products.css">
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.3.0/kakao.min.js"
+        integrity="sha384-70k0rrouSYPWJt7q9rSTKpiTfX6USlMYjZUtr1Du+9o4cGvhPAWxngdtVZDdErlh" crossorigin="anonymous"></script>
+    <script>
+        Kakao.init('b2565aa45aaaf613c93d24212cbbde02'); // 사용하려는 앱의 JavaScript 키 입력
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+        </header>
+        <div class="menu">
+        </div>
+        <main>
+            <section class="product">
+                <div class="container">
+                    <button type="button" class="back">
+                        <img class="back_arrow" src="/asset/imgs/icons/arrow.svg" alt="back_btn" />
+                    </button>
+                    <div class="item_img">
+                        <div class="good">
+                            <img src="/asset/imgs/products/good-color.png" alt="good" class="good-color">
+                            <img src="/asset/imgs/products/good.png" alt="good" class="good-noncolor active">
+                        </div>
+                        <img src="/asset/imgs/products/product_img.png" alt="product_img">
+                    </div>
+                    <div class="product_title">
+                        <div class="title">
+                            <img src="/asset/imgs/icons/review_star.svg" alt="star">
+                            <div class="score_wrap">
+                                <span class="score">4.8</span>
+                                <span class="score_length">(74)</span>
+                            </div>
+                            <div class="bundle">
+                                <span>묶음 배송 가능 상품</span>
+                            </div>
+                        </div>
+                        <h3 class="product_title-h">볼파스엔젤맨 파스브라우스 레몬맛</h3>
+                        <span class="product_title-sub">레몬향이 가득한 프리미엄 논알콜 맥주</span>
+                    </div>
+                    <div class="product_price">
+                        <div class="sale">
+                            <span class="sale_price">2,800원</span><span class="sale_percent">10%</span>
+                        </div>
+                        <div class="price">
+                            <span><span class="price_nub">2,520</span>원</span>
+                        </div>
+                    </div>
+                    <div class="product_tab">
+                        <div class="sale">
+                            <span>쏘버마켓 만의 골라담기 주문 할인 혜택</span>
+                            <h4>원하는 제품 12캔 골라담고 <span>5% 할인 받기</span></h4>
+                            <p>오직 쏘버마켓에서만 가능한 제품 종류와 상관없이 원하는 제품을
+                                낱개로 마음껏 담고 5% 추가 할인 혜택을 누려보세요.</p>
+                        </div>
+                        <div class="option">
+                            <span>묶음 배송으로 최대 할인율 받기!</span>
+                            <button type="button"><span>옵션 선택하기</span></button>
+                        </div>
+                    </div>
+                    <div class="product_accordian">
+                        <div class="check_sale">
+                            <div class="accordian_title">
+                                <h3>묶음 배송 할인율 확인하기</h3>
+                                <img src="/asset/imgs/icons/accrodian-arrow-color.svg" alt="accrodian-arrow-color">
+                            </div>
+                            <ul class="accordian_inner">
+                                <li><span>6캔 주문 시 <span class="color">3% 할인</span></span></li>
+                                <li><span>12캔 주문 시 <span class="color">7% 할인</span></span></li>
+                                <li><span>24캔 주문 시 <span class="color">24% 할인</span></span></li>
+                            </ul>
+                        </div>
+                        <div class="sober_point">
+                            <div class="accordian_title">
+                                <h3>SOBER POINT</h3>
+                                <img src="/asset/imgs/icons/accrodian-arrow-color.svg" alt="accrodian-arrow-color">
+                            </div>
+
+                            <ul class="accordian_inner">
+                                <li><span class="color">리뷰 작성 시 300P 적립</span></li>
+                                <li><span class="color">게임 참여 시 500P 적립</span></li>
+                                <li><span class="color">중복 참여 가능</span></li>
+                            </ul>
+                        </div>
+                        <div class="info">
+                            <div class="accordian_title">
+                                <h3>INFORMATION</h3>
+                                <img src="/asset/imgs/icons/accrodian-arrow.svg" alt="accrodian-arrow">
+                            </div>
+                            <ul class="accordian_inner">
+                                <li><span>용량 : 350ml</span></li>
+                                <li><span>특징 : 레몬향, 프리미엄</span></li>
+                                <li><span>Acl(%) : 0.03%</span></li>
+                                <li><span>칼로리 : 0 kcal</span></li>
+                                <li><span>브루어리 및 원산지 : 독일</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="detail">
+                        <ul class="tab">
+                            <li data-tab-index="0" class="active"><span>제품상세</span></li>
+                            <li data-tab-index="1"><span>리뷰 </span><span class="review_length">232</span></li>
+                            <li data-tab-index="2"><span>문의 </span><span class="cs_length">55</span></li>
+                        </ul>
+                        <div class="contents">
+                            <div data-content-index="0" class="contents_list detail_page active">
+                                <div class="detail_page_img">
+                                    <img src="/asset/imgs/hite.png" alt="">
+                                    <img src="/asset/imgs/hite.png" alt="">
+                                    <img src="/asset/imgs/hite.png" alt="">
+                                    <img src="/asset/imgs/hite.png" alt="">
+                                    <img src="/asset/imgs/hite.png" alt="">
+                                    <img src="/asset/imgs/hite.png" alt="">
+                                    <img src="/asset/imgs/hite.png" alt="">
+                                </div>
+                                <div class="shadow_img">
+                                    <img src="/asset/imgs/hidden.png" alt="">
+                                </div>
+                                <button type="button" class="view_btn hidden"><span>상품 펼치기</span><img
+                                        src="/asset/imgs/icons/accrodian-arrow-color.svg" alt="accrodian-arrow-color"></button>
+                            </div>
+                            <div data-content-index="1" class="contents_list review_page">
+                                <div class="delivery">
+                                    <span>배송 및 반품 정보</span>
+                                    <img src="/asset/imgs/icons/accrodian-arrow-color.svg" alt="">
+                                </div>
+                                <div class="review_contents">
+                                    <h3>리뷰 <span class="review_length">232</span></h3>
+                                    <div class="review_ul">
+                                        <li class="review_card">
+                                            <div class="review_inner">
+                                                <div class="review_top">
+                                                    <div class="review_img">
+                                                        <img src="/asset/imgs/angel.png" alt="angel">
+                                                    </div>
+                                                    <h3>볼파스엔젤맨 파스브라우스
+                                                        레몬맛 24캔</h3>
+                                                </div>
+                                                <div class="review_center">
+                                                    <ul class="review_star">
+                                                        <li><img src="/asset/imgs/icons/review_star.svg" alt="review_star"></li>
+                                                        <li><img src="/asset/imgs/icons/review_star.svg" alt="review_star"></li>
+                                                        <li><img src="/asset/imgs/icons/review_star.svg" alt="review_star"></li>
+                                                        <li><img src="/asset/imgs/icons/review_star.svg" alt="review_star"></li>
+                                                        <li><img src="/asset/imgs/icons/review_star.svg" alt="review_star"></li>
+                                                    </ul>
+                                                    <div class="review_date">
+                                                        <span>2023/05/02</span>
+                                                    </div>
+                                                </div>
+                                                <ul class="review_bottom">
+                                                    <li>깔끔해요</li>
+                                                    <li>청량해요</li>
+                                                    <li>양이 적당해요</li>
+                                                    <li>빠른 편이에요</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="review_card">
+                                            <div class="review_inner">
+                                                <div class="review_top">
+                                                    <div class="review_img">
+                                                        <img src="/asset/imgs/angel.png" alt="angel">
+                                                    </div>
+                                                    <h3>볼파스엔젤맨 파스브라우스
+                                                        레몬맛 24캔</h3>
+                                                </div>
+                                                <div class="review_center">
+                                                    <ul class="review_star">
+                                                        <li><img src="/asset/imgs/icons/review_star.svg" alt="review_star"></li>
+                                                        <li><img src="/asset/imgs/icons/review_star.svg" alt="review_star"></li>
+                                                        <li><img src="/asset/imgs/icons/review_star.svg" alt="review_star"></li>
+                                                        <li><img src="/asset/imgs/icons/review_star.svg" alt="review_star"></li>
+                                                        <li><img src="/asset/imgs/icons/review_star.svg" alt="review_star"></li>
+                                                    </ul>
+                                                    <div class="review_date">
+                                                        <span>2023/05/02</span>
+                                                    </div>
+                                                </div>
+                                                <ul class="review_bottom">
+                                                    <li>깔끔해요</li>
+                                                    <li>청량해요</li>
+                                                    <li>양이 적당해요</li>
+                                                    <li>빠른 편이에요</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="review_card">
+                                            <div class="review_inner">
+                                                <div class="review_top">
+                                                    <div class="review_img">
+                                                        <img src="/asset/imgs/angel.png" alt="angel">
+                                                    </div>
+                                                    <h3>볼파스엔젤맨 파스브라우스
+                                                        레몬맛 24캔</h3>
+                                                </div>
+                                                <div class="review_center">
+                                                    <ul class="review_star">
+                                                        <li><img src="/asset/imgs/icons/review_star.svg" alt="review_star"></li>
+                                                        <li><img src="/asset/imgs/icons/review_star.svg" alt="review_star"></li>
+                                                        <li><img src="/asset/imgs/icons/review_star.svg" alt="review_star"></li>
+                                                        <li><img src="/asset/imgs/icons/review_star.svg" alt="review_star"></li>
+                                                        <li><img src="/asset/imgs/icons/review_star.svg" alt="review_star"></li>
+                                                    </ul>
+                                                    <div class="review_date">
+                                                        <span>2023/05/02</span>
+                                                    </div>
+                                                </div>
+                                                <ul class="review_bottom">
+                                                    <li>깔끔해요</li>
+                                                    <li>청량해요</li>
+                                                    <li>양이 적당해요</li>
+                                                    <li>빠른 편이에요</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </div>
+                                    <button type="button" class="review_more"><span>더보기</span><img src="/asset/imgs/icons/accrodian-arrow-color.svg"
+                                            alt="accrodian-arrow-color">
+                                    </button>
+                                </div>
+                            </div>
+                            <div data-content-index="2" class="contents_list cs_page">
+                                <div class="cs_contents">
+                                    <div class="cs_top">
+                                        <h3>문의 <span class="cs_length">232</span></h3>
+                                        <a href="">문의하기</a>
+                                    </div>
+                                    <ul class="cs_ul">
+                                        <li class="cs_card">
+                                            <a href="">
+                                                <div class="cs_inner">
+                                                    <h3>배송 얼마나 걸리나요</h3>
+                                                    <div class="cs_content">
+                                                        <span class="cs_date">2023-05-02 02:12:11</span>
+                                                        <div class="cs_result_btn cs_pending">
+                                                            <span class="">답변중</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="cs_card">
+                                            <a href="">
+                                                <div class="cs_inner">
+                                                    <h3>배송 얼마나 걸리나요</h3>
+                                                    <div class="cs_content">
+                                                        <span class="cs_date">2023-05-02 02:12:11</span>
+                                                        <div class="cs_result_btn cs_pending">
+                                                            <span class="">답변중</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="cs_card">
+                                            <a href="">
+                                                <div class="cs_inner">
+                                                    <h3>배송 얼마나 걸리나요</h3>
+                                                    <div class="cs_content">
+                                                        <span class="cs_date">2023-05-02 02:12:11</span>
+                                                        <div class="cs_result_btn cs_complete">
+                                                            <span class="">답변완료</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="cs_card">
+                                            <a href="">
+                                                <div class="cs_inner">
+                                                    <h3>배송 얼마나 걸리나요</h3>
+                                                    <div class="cs_content">
+                                                        <span class="cs_date">2023-05-02 02:12:11</span>
+                                                        <div class="cs_result_btn cs_complete">
+                                                            <span class="">답변완료</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <ul class="cs_navi">
+                                        <li class="active"><span>1</span></li>
+                                        <li><span>2</span></li>
+                                        <li><span>3</span></li>
+                                        <li><span>4</span></li>
+                                        <li><span>5</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="share">
+                        <button type="button" class="share_btn">
+                            <img src="/asset/imgs/products/share.png" alt="share">
+                        </button>
+                    </div>
+                    <div class="buy">
+                        <div class="good">
+                            <img src="/asset/imgs/icons/heart.svg" alt="good" class="good-noncolor active">
+                            <img src="/asset/imgs/icons/heart-fill.svg" alt="good" class="good-color">
+                        </div>
+                        <button class="buy_btn" type="button"><span>구매하기</span></button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+        </footer>
+        <div class="bottomTab"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="
+https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
+"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/asset/js/common.js"></script>
+    <script src="/asset/js/product.js"></script>
+</body>
+
+</html>

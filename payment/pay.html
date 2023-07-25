@@ -16,15 +16,13 @@
         <div class="menu"></div>
         <main>
             <section class="pay">
-                <div class="container">
-                    <button type=" button" class="back">
-                        <img class="back_arrow" src="/asset/imgs/icons/arrow.svg" alt="back_btn" />
-                        <span>결제</span>
-                        <span></span>
-                    </button>
-                </div>
-                <div class="container">
-                    <div class="pay_contens">
+                <button type=" button" class="back">
+                    <img class="back_arrow" src="/asset/imgs/icons/arrow.svg" alt="back_btn" />
+                    <span>결제</span>
+                    <span></span>
+                </button>
+                <div class="container order_container">
+                    <div class="pay_contents">
                         <h3>주문 상품</h3>
                         <ul class="pay_content">
                             <li class="pay_list">
@@ -135,42 +133,152 @@
                                     </div>
                                 </div>
                             </li>
-
-
-
-
                         </ul>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="pay_contens">
-                        <h3>결제 정보</h3>
+                <div class="container delivery_container">
+                    <div class="pay_contents">
+                        <div class="delivery_title">
+                            <h3>배송지</h3>
+                            <a href="">추가</a>
+                        </div>
+                        <div class="delivery_contents">
+                            <div class="delivery_select">
+                                <span>배송지 선택</span>
+                                <select name="delivery_place" id="delivery_place">
+                                    <option value="배송지 선택" disabled selected>배송지 선택</option>
+                                    <option value="배송지1">배송지1</option>
+                                    <option value="배송지2">배송지2</option>
+                                    <option value="배송지3">배송지3</option>
+                                    <option value="배송지4">배송지4</option>
+                                </select>
+                            </div>
+                            <div class="delivery_memo">
+                                <span>배송지 메모</span>
+                                <textarea name="" id="" cols="30" rows="5" placeholder="배송 메모를 입력해주세요."></textarea>
+                            </div>
+                            <ul class="delivery_data">
+                                <li><span>배송지 이름</span><span>우리집</span></li>
+                                <li><span>주소지</span><span>경기도 고양시 덕양구 삼송로 136번길 3
+                                        BV빌딩 2,3층</span></li>
+                                <li><span>수령인</span><span>김쏘버</span></li>
+                                <li><span>연락처</span><span>010-1234-4321</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="container pay_info_container">
+                    <div class="pay_contents">
+                        <h3>결제 방식</h3>
                         <div class="pay_content2">
-                            <button type="button" class="pay_content2-card"><span>신용카드</span></button>
-                            <button type="button" class="pay_content2-card"><span>카카오페이</span></button>
-                            <button type="button" class="pay_content2-card"><span>가상계좌</span></button>
-                            <button type="button" class="pay_content2-card"><span>휴대전화</span></button>
+                            <button type="button" class="pay_content2-card pay_card">
+                                <img src="/asset/imgs/icons/pay_card.png" alt="신용카드">
+                                <span>신용카드</span></button>
+                            <button type="button" class="pay_content2-card pay_kakao">
+                                <img src="/asset/imgs/icons/pay_kakao.png" alt="카카오페이">
+                                <span>카카오페이</span></button>
+                            <button type="button" class="pay_content2-card pay_acc">
+                                <img src="/asset/imgs/icons/pay_acc.png" alt="가상계좌">
+                                <span>가상계좌</span></button>
+                            <button type="button" class="pay_content2-card pay_phone">
+                                <img src="/asset/imgs/icons/pay_phone.png" alt="휴대전화">
+                                <span>휴대전화</span></button>
                         </div>
-                        <span class="select_card">신용카드 선택</span>
+                        <div class="card_select">
+                            <select name="delivery_place" id="card_select">
+                                <option value="카드사 선택" disabled selected>카드사 선택</option>
+                                <option value="KB국민카드">KB국민카드</option>
+                                <option value="신한카드">신한카드</option>
+                                <option value="삼성카드">삼성카드</option>
+                                <option value="비씨카드">비씨카드</option>
+                                <option value="NH농협카드">NH농협카드</option>
+                                <option value="현대카드">현대카드</option>
+                                <option value="롯데카드">롯데카드</option>
+                                <option value="하나카드">하나카드</option>
+                                <option value="카카오뱅크카드">카카오뱅크카드</option>
+                                <option value="케이뱅크카드">케이뱅크카드</option>
+                                <option value="우리카드">우리카드</option>
+                                <option value="씨티카드">씨티카드</option>
+                                <option value="신협카드">신협카드</option>
+                                <option value="수협카드">수협카드</option>
+                                <option value="우체국카드">우체국카드</option>
+                                <option value="전북카드">전북카드</option>
+                                <option value="제주카드">제주카드</option>
+                                <option value="KDB산업은행카드">KDB산업은행카드</option>
+                                <option value="광주카드">광주카드</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="amount">
-                        <div class="amount_normal">
-                            <span>정상가</span>
-                            <span class="normal_price">42,500원</span>
+                <div class="container sale_container">
+                    <div class="pay_contents">
+                        <h3>할인적용</h3>
+                        <div class="delivery_contents">
+                            <div class="delivery_select">
+                                <span>쿠폰</span>
+                                <select name="delivery_place" id="coupon_select">
+                                    <option value="쿠폰 선택" disabled selected>쿠폰 선택</option>
+                                    <option value="쿠폰1">쿠폰1</option>
+                                    <option value="쿠폰2">쿠폰2</option>
+                                </select>
+                            </div>
+                            <div class="sober_point">
+                                <span>쏘버 포인트</span>
+                                <div class="sober_point_input">
+                                    <input type="number" name="" id="" value="0">
+                                    <span class="unit">P</span>
+                                </div>
+                            </div>
+
                         </div>
-                        <div class="amount_sale">
-                            <span>할인 금액</span>
-                            <span class="sale_price">-5,500원</span>
-                        </div>
-                        <div class="amount_price">
-                            <span>최종 주문 금액</span>
-                            <span class="last_price"><span>0</span>원</span>
+                    </div>
+
+                </div>
+
+                <div class="container amount_container">
+                    <div class="pay_contents">
+                        <h3>결제 내역</h3>
+                        <div class="amount">
+                            <div class="amount_normal">
+                                <span>정상가</span>
+                                <span><span class="normal_price">42,500</span>원</span>
+                            </div>
+                            <div class="amount_delivery">
+                                <span>배송비</span>
+                                <span><span class="delivery_price">2,500</span>원</span>
+                            </div>
+                            <div class="amount_sale">
+                                <span>할인 금액</span>
+                                <span><span class="sale_price">-5,500</span>원</span>
+
+                            </div>
+                            <div class="amount_price">
+                                <span>총 결제 금액</span>
+                                <span><span class="last_price">37,000</span>원</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="container">
+                <div class="container point_container">
+                    <div class="pay_contents">
+                        <div class="point_title">
+                            <h3>포인트 혜택</h3>
+                            <span>최대<span class="max_point">300</span>P</span>
+                        </div>
+                        <div class="amount">
+                            <div class="amount_normal">
+                                <span>리뷰 작성</span>
+                                <span><span class="revie_point">200</span>P</span>
+                            </div>
+                            <div class="amount_delivery">
+                                <span>구매 적립</span>
+                                <span><span class="add_point">100</span>P</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="container agree_container">
                     <label for="payAgree" class="payAgree-label">
                         <input type="checkbox" name="payAgree" id="payAgree">
                         <div class="agree_circle">
@@ -180,12 +288,11 @@
                             동의합니다.(필수)</span>
                     </label>
                 </div>
-                <button type="button" class="payBtn"><span class="last_price last_price-text">29,000</span>원 결제하기</button>
+                <button type="button" class="payBtn">결제하기</button>
             </section>
-
-
         </main>
         <footer></footer>
+        <div class="bottomTab"></div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>

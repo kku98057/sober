@@ -1,7 +1,8 @@
+///////////////////카카오로그인
 //신규회원인경우
 const REDIRECT_URL_NEW = "http://127.0.0.1:5501/auth/signup/complete.html";
 // 이미 회원인 경우 'http://sobermarket.co.kr/main/main.php'
-const REDIRECT_URL = "http://127.0.0.1:5501/auth/signup/complete.html";
+const REDIRECT_URL = "http://127.0.0.1:5501/auth/connect_kakao.html";
 
 function loginWithKakao() {
   Kakao.Auth.authorize({
@@ -26,6 +27,7 @@ function requestUserInfo() {
 }
 //로그인 토큰
 
+///////////////// 카카오 로그인
 const code = new URL(window.location.href).searchParams.get("code");
 if (code) {
   const getToken = () => {
@@ -47,24 +49,7 @@ if (code) {
       .then((res) => {
         const { data } = res;
         const { access_token } = data;
-        if (access_token) {
-          axios
-            .post(
-              "https://kapi.kakao.com/v2/user/me",
-              {},
-              {
-                headers: {
-                  Authorization: `Bearer ${access_token}`,
-                  "Content-type":
-                    "application/x-www-form-urlencoded;charset=utf-8",
-                },
-              }
-            )
-            .then((res) => {
-              console.log(res);
-              return res;
-            });
-        }
+        console.log(access_token, "엑세스토큰");
       });
   };
 
@@ -73,15 +58,13 @@ if (code) {
   })();
 }
 
-const loginData = document.querySelectorAll("#email, #pw")
-  ? document.querySelectorAll("#email, #pw")
-  : null;
+const loginData = document.querySelectorAll("#email, #pw");
 
 let userInfo = {
   email: "",
-  pw: "",
+  password: "",
 };
-
+////////////////// 이메일 로그인
 if (loginData) {
   const LOGIN_URL = "로그인 api";
   const TOKEN_ULR = "토큰 api";
