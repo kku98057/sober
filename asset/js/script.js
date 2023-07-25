@@ -31,6 +31,7 @@ const slider_items = document.querySelectorAll(".slide");
 const planet_name = document.querySelectorAll(".planet-name");
 const next = document.querySelector(".next");
 const prev = document.querySelector(".prev");
+const body = document.querySelector("body");
 const names = ["저칼로리", "비건", "논알콜", "과실", "프리미엄", "아이템"];
 let selected_item = 0;
 
@@ -82,11 +83,30 @@ prev.addEventListener("click", () => {
 const popup2 = document.querySelectorAll(".popup2,.popup3");
 const popupClose = document.querySelectorAll(".popup2 .close, .popup3 .close");
 
+popup2.forEach((pop, idx) => {
+  if (
+    popup2[0].classList.contains("visible") &&
+    popup2[1].classList.contains("visible")
+  ) {
+    body.classList.add("active");
+  }
+});
 popupClose.forEach((close, indx) => {
   close.addEventListener("click", () => {
-    popup2[indx].style.display = "none";
+    popup2[indx].classList.add("hidden");
+    popup2[indx].classList.remove("visible");
+
+    popup2.forEach((pop, idx) => {
+      if (
+        popup2[0].classList.contains("hidden") &&
+        popup2[1].classList.contains("hidden")
+      ) {
+        body.classList.remove("active");
+      }
+    });
   });
 });
+
 gsap.registerPlugin(ScrollTrigger);
 let height = document
   .querySelector(".intro_overlay")
@@ -208,3 +228,90 @@ function updateTimer() {
 }
 
 setInterval(updateTimer, 1000);
+
+// review
+const getReview = async () => {
+  return axios.get("/asset/dummy/review.json").then((res) => res.data);
+};
+(async () => {
+  const review = await getReview();
+  console.log(review);
+  const review_contents = document.querySelector(".review_contents");
+  let html = "";
+
+  for (let i = 0; i < review.length; i += 2) {
+    let reviewItem1 = review[i];
+    let reviewItem2 = review[i + 1] ? review[i + 1] : null;
+
+    html += `
+    <li class="swiper-slide review_slide">
+      <div class="review_inner">
+          <div class="review_top">
+              <div class="review_img">
+                  <img src="${reviewItem1.image}" alt=${reviewItem1.name}>
+              </div>
+              <h3>${reviewItem1.name}</h3>
+          </div>
+          <div class="review_center">
+           
+              <ul class="review_star">
+              ${[...Array(reviewItem1.score)]
+                .map(() => {
+                  return `<li><img src="/asset/imgs/icons/review_star.svg" alt="review_star"></li>`;
+                })
+                .join("")}
+              </ul>
+              <div class="review_date">
+                  <span>${reviewItem1.date}</span>
+              </div>
+          </div>
+          <ul class="review_bottom">
+          ${reviewItem1.tag
+            .map((list) => {
+              return `    <li>${list}</li>`;
+            })
+            .join("")}
+          </ul>
+      </div>
+      ${
+        reviewItem2
+          ? `
+      <div class="review_inner">
+          <div class="review_top">
+              <div class="review_img">
+                  <img src="${reviewItem2.image}" alt=${reviewItem2.name}>
+              </div>
+              <h3>${reviewItem2.name}</h3>
+          </div>
+          <div class="review_center">
+              <ul class="review_star">
+              ${[...Array(reviewItem2.score)]
+                .map(() => {
+                  return `<li><img src="/asset/imgs/icons/review_star.svg" alt="review_star"></li>`;
+                })
+                .join("")}
+              </ul>
+              <div class="review_date">
+                  <span>${reviewItem2.date}</span>
+              </div>
+          </div>
+          <ul class="review_bottom">
+          ${reviewItem2.tag
+            .map((list) => {
+              return `    <li>${list}</li>`;
+            })
+            .join("")}
+          </ul>
+      </div>`
+          : ""
+      }
+    
+    </li>`;
+  }
+
+  review_contents.innerHTML = html;
+  const reviewSlider = new Swiper(".review_slider", {
+    spaceBetween: 10,
+    slidesPerView: 1.07,
+  });
+})();

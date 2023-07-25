@@ -1,3 +1,8 @@
+// const token = Cookies.get("token");
+// if (!token) {
+//   window.location.href = "/auth/needLogin.html";
+// }
+
 const basketContents = document.querySelector(".basket_contents");
 const itemList = [
   {

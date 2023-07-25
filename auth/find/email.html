@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/asset/css/reset.css">
+    <link rel="stylesheet" href="/asset/css/common.css">
+    <link rel="stylesheet" href="/asset/css/auth.css">
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.3.0/kakao.min.js"
+        integrity="sha384-70k0rrouSYPWJt7q9rSTKpiTfX6USlMYjZUtr1Du+9o4cGvhPAWxngdtVZDdErlh" crossorigin="anonymous"></script>
+    <script>
+        Kakao.init('b2565aa45aaaf613c93d24212cbbde02'); // 사용하려는 앱의 JavaScript 키 입력
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <main>
+            <section class="signup">
+                <div class="container">
+                    <div class="signup_wrap">
+                        <h3>이메일 찾기</h3>
+                        <form action="" class="sign_2">
+                            <label for="phone">
+                                <span>휴대폰 번호</span>
+                                <div class="phone">
+                                    <input type="number" name="phone" placeholder="('-'를 빼고 입력해주세요.)" id="phone">
+                                    <div class="sign_btns phone_btn ">
+                                        <button type="button"><span>인증받기</span></button>
+                                    </div>
+                                </div>
+                            </label>
+                            <label for="numb">
+                                <span>인증번호</span>
+                                <div class="check">
+                                    <input type="number" name="" id="numb" placeholder="인증번호를 입력해주세요.">
+                                    <div class="sign_btns check_btn">
+                                        <button type="button"><span>인증확인</span></button>
+                                    </div>
+                                </div>
+
+                            </label>
+                            <div class="sign_btns sign_2_btn ">
+                                <button type="submit"><span>다음</span></button>
+                            </div>
+                        </form>
+
+                    </div>
+            </section>
+        </main>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="
+    https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
+    "></script>
+    <script src="/asset/js/signup.js"></script>
+</body>
+
+</html>

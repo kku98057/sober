@@ -21,22 +21,36 @@
         <div class="menu">
         </div> -->
         <main>
-            <section class="signup">
+            <section class="login_email">
                 <div class="container">
-                    <div class="signup_wrap">
-                        <div class="signup_img">
+                    <div class="login_email_wrap">
+                        <div class="login_email_logo">
                             <img src="/asset/imgs/icons/logo-color.png" alt="logo-color">
                         </div>
+                        <form action="" class="login_email_form">
+                            <label for="email">
+                                <span>이메일 주소</span>
+                                <input type="email" id="email" name="email" placeholder="이메일을 입력해주세요." required>
+                            </label>
+                            <label for="pw">
+                                <span>이메일 주소</span>
+                                <input type="password" id="pw" name="pw" autocomplete="on" placeholder="비밀번호를 입력해주세요." required>
+                            </label>
+                            <div class="sign_btns">
+                                <button class="email_login_btn" type="click"><span>로그인</span></button>
+                            </div>
+                        </form>
+                        <ul class="another">
+                            <li><a href="/auth/signup/agree.html">회원가입</a></li>
+                            <li><a href="/auth/find/email.html">이메일 찾기</a></li>
+                            <li><a href="/auth/find/pw.html">비밀번호 찾기</a></li>
+                        </ul>
                         <div class="sign_btns">
                             <button class="kakao_start" type="button" onclick="loginWithKakao()">
                                 <img src="/asset/imgs/icons/kakao.svg" alt="kakao">
                                 <span>카카오 3초만에 시작하기</span>
                             </button>
-                            <button class="normal_start" type="button">
-                                <a href="/auth/login_mail.html">이메일 아이디로 로그인하기 </a>
-                            </button>
                         </div>
-                        <a class="use_market" href="/auth/signup/agree.html">회원가입하고 쏘버마켓 이용하기</a>
                     </div>
                 </div>
             </section>
