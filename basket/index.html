@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/asset/css/reset.css">
-    <link rel="stylesheet" href="/asset/css/common.css">
-    <link rel="stylesheet" href="/asset/css/basket.css">
+    <link rel="stylesheet" href="../asset/css/reset.css">
+    <link rel="stylesheet" href="../asset/css/common.css">
+    <link rel="stylesheet" href="../asset/css/basket.css">
     <title>Document</title>
 </head>
 
@@ -18,7 +18,7 @@
             <section class="basket">
                 <div class="container">
                     <button type="button" class="back">
-                        <img class="back_arrow" src="/asset/imgs/icons/arrow.svg" alt="back_btn" />
+                        <img class="back_arrow" src="../asset/imgs/icons/arrow.svg" alt="back_btn" />
                     </button>
                     <h3 class="product_text">장바구니</h3>
                     <ul class="basket_contents">
@@ -115,38 +115,55 @@
                     <div class="amount">
                         <div class="amount_normal">
                             <span>정상가</span>
-                            <span class="normal_price">42,500원</span>
+                            <span class="normal_price">0원</span>
+                        </div>
+                        <div class="delivery">
+                            <span>배송비</span>  <h3 class="delivery_hint"> 50,000원 이상 구매시 배송비 무료</h3> 
+                            <span class="delivery_price">3,000원</span>
                         </div>
                         <div class="amount_sale">
                             <span>할인 금액</span>
-                            <span class="sale_price">-5,500원</span>
+                            <span class="sale_price">0원</span>
+                        </div>
+                        <hr size="1" color="#B2B2B2">
+                        <div class="special">
+                            <span>골라담기 5% 할인 혜택</span>
+                            <span class="special_price">0원</span>
+                        </div>
+                        <div class="coupon">
+                            <span>쿠폰할인</span>
+                            <span class="coupon_price">-3,000원</span>
+                        </div>
+                        <div class="sober_point">
+                            <span>쏘버 포인트</span>
+                            <span class="point">-5,00원</span>
                         </div>
                         <div class="amount_price">
                             <span>최종 주문 금액</span>
-                            <span class="last_price">37,000원</span>
+                            <span class="last_price">0원</span>
                         </div>
                     </div>
                     <button class="pay_btn" type="button"><span>결제하기</span></button>
                 </div>
             </section>
-            <div class="popup">
+            <!-- <div class="popup">
                 <div class="popup_wrap">
-                    <h4>2캔 더 구매 시
+                    <h4 class="popup_text">2캔 더 구매 시
                         6캔 <span>묶음 배송</span> 가능!</h4>
                     <div class="popup_btns">
                         <button class="popup_btns_done" type="button"><span>괜찮아요!</span></button>
                         <button class="popup_btns_more" type="button"><span>더 담을게요!</span></button>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </main>
         <footer></footer>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="/asset/js/common.js"></script>
-    <script src="/asset/js/basket.js"></script>
+    <script src="../asset/js/common.js"></script>
+    <script src="../asset/js/basket.js"></script>
 
 </body>
 

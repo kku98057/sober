@@ -319,13 +319,12 @@ footer li {
   height: 100vh;
   position: fixed;
   z-index: 100;
-  display: flex;
+  display: none;
   top: 0;
   left: 0;
   align-items: center;
   justify-content: center;
   background-color: #0000006b;
-  display: none;
 }
 .popup.active {
   display: block;
