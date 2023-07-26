@@ -25,13 +25,13 @@
                     <div class="basket_bundle">
                         <h3 class="basket_product_h">묶음배송 상품</h3>
                         <ul class="basket_contents bundle_product"> </ul>
-                        <p class="alarm"><span class="alaram_count"></span>캔 더 구매시 더 싸게 6캔 묶음 배송 가능!</p>
+                        <p id="bundle_alarm" class="alarm"><span class="alaram_count"></span>[묶음배송 혜택] 6캔 묶음 추가 구매시 7% 할인!</p>
                         <p class="alarm2">현재 묶음 배송 3% 할인 혜택 적용</p>
                     </div>
                     <div class="basket_individual">
                         <h3 class="basket_product_h">개별 상품(골라담기)</h3>
                         <ul class="basket_contents individual_product"></ul>
-                        <p class="alarm"><span class="alaram_count"></span>캔 더 구매시 더 싸게 6캔 묶음 배송 가능!</p>
+                        <p id="pick_alarm" class="alarm"><span class="alaram_count"></span>[골라담기 혜택] 9캔 더 담을 시 5% 추가 할인!</p>
                     </div>
 
                     <div class="amount">
@@ -42,25 +42,25 @@
                         <div class="delivery">
                             <span>배송비</span>
                             <h3 class="delivery_hint"> 50,000원 이상 구매시 배송비 무료</h3>
-                            <span class="delivery_price">3,000원</span>
+                            <span class="delivery_price">0원</span>
                         </div>
                         <div class="amount_sale">
                             <span>할인 금액</span>
                             <span class="sale_price">0원</span>
                         </div>
                         <hr size="1" color="#B2B2B2">
-                        <div class="special">
+                        <div id="special_bundle" class="special">
+                            <span class="special_bundle_text">묶음배송 3% 할인 혜택</span>
+                            <span class="special_bundle_price">0원</span>
+                        </div>
+                        <div id="special_pick" class="special">
                             <span>골라담기 5% 할인 혜택</span>
                             <span class="special_price">0원</span>
                         </div>
                         <!-- 묶음배송 새로추가 07.26 -->
-                        <div class="special">
-                            <span>묶음배송 5% 할인 혜택</span>
-                            <span class="special_price">0원</span>
-                        </div>
-                        <div class="special">
+                        <div id="special_pick" class="special">
                             <span>골라담기 5% 할인 혜택</span>
-                            <span class="special_price">0원</span>
+                            <span class="special_pick_price">0원</span>
                         </div>
                         <div class="coupon">
                             <span>쿠폰할인</span>
@@ -93,8 +93,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="/asset/js/common.js"></script>
-    <script src="/asset/js/basket.js"></script>
+    <script src="../asset/js/common.js"></script>
+    <script src="../asset/js/basket.js"></script>
 
 
 </body>
