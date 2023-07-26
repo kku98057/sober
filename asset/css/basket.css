@@ -27,12 +27,26 @@
 .basket_contents {
   display: flex;
   flex-direction: column;
+  height: 300px;
+  overflow: auto;
 }
+.basket_contents::-webkit-scrollbar {
+  width: 3px;
+}
+.basket_contents::-webkit-scrollbar-thumb {
+  width: 3px;
+  background-color: #414141;
+}
+
 .basket_list {
   padding: 12px 0;
+  padding-right: 5px;
   border-bottom: 1px solid #f0f0f0;
   display: flex;
   gap: 20px;
+}
+.basket_list:last-child {
+  border: 0;
 }
 .basket_individual {
   margin-top: 50px;
@@ -143,6 +157,14 @@
   left: 50%;
   transform: translate(-50%, 0);
 }
+.alarm2 {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--color-green1);
+  text-align: center;
+  margin-top: 8px;
+}
 .amount {
   margin-top: 44px;
 }
@@ -220,4 +242,51 @@
 
 .coupon {
   padding: 2px 0 2px 0;
+}
+.popup {
+  width: 100%;
+  height: 100vh;
+  background-color: #00000094;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.popup.active {
+  display: flex;
+}
+.popup_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 370px;
+  border-radius: 10px;
+  border: 1px solid var(--color-green1);
+  background: #000;
+}
+.popup_wrap h3 {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  text-align: center;
+}
+.popup_btn {
+  display: flex;
+  height: 38px;
+  width: 128px;
+  border-radius: 10px;
+
+  justify-content: center;
+  background-color: var(--color-green1);
+  align-items: center;
+}
+.popup_btn span {
+  font-size: 14px;
+  font-style: normal;
+  color: #000;
+  font-weight: 500;
 }

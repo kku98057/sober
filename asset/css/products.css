@@ -271,6 +271,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   position: relative;
 }
 .tab li.active:after {
@@ -311,8 +312,10 @@
   justify-content: center;
   background-color: #000000;
   gap: 10px;
+  position: relative;
   border: 1px solid var(--color-green1);
 }
+
 .detail_page button.hidden {
   position: relative;
   z-index: 1;
@@ -327,10 +330,14 @@
   width: 13px;
 }
 .shadow_img {
-  width: 100%;
+  height: 140px;
+  background: url(/asset/imgs/hidden.png) no-repeat top/cover;
+  width: 381.33px;
+
   position: absolute;
-  bottom: -40px;
-  left: 0%;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 .shadow_img.hidden {
   display: none;

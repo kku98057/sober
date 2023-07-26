@@ -262,7 +262,8 @@
 .pay .amount_container,
 .pay .sale_container,
 .pay .point_container,
-.refund_delivery_container {
+.refund_delivery_container,
+.pay .order2_container {
   background-color: #000000;
   padding: 20px;
 }
@@ -271,7 +272,8 @@
 .pay .delivery_container,
 .pay .amount_container,
 .pay .point_container,
-.refund_delivery_container {
+.refund_delivery_container,
+.pay .order2_container {
   margin-top: 20px;
 }
 .pay .agree_container {
@@ -286,10 +288,31 @@
   margin-bottom: 15px;
   font-weight: 700;
 }
+.pay_contents h3 span {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--color-green1);
+}
 .pay_content {
   display: flex;
   flex-direction: column;
 }
+.order_container .pay_content,
+.order2_container .pay_content {
+  height: 300px;
+  overflow: auto;
+}
+.order_container .pay_content::-webkit-scrollbar,
+.order2_container .pay_content::-webkit-scrollbar {
+  width: 3px;
+}
+.order_container .pay_content::-webkit-scrollbar-thumb,
+.order2_container .pay_content::-webkit-scrollbar-thumb {
+  width: 3px;
+  background-color: #414141;
+}
+
 .pay_list {
   padding: 12px 0;
   border-bottom: 1px solid #f0f0f0;
@@ -496,10 +519,10 @@
   background-color: #999999;
 }
 .payAgree-label input:checked ~ .agree_circle {
-  border: 1px solid #fff;
+  border: 1px solid var(--color-green1);
 }
 .payAgree-label input:checked ~ .agree_circle div {
-  background-color: #fff;
+  background-color: var(--color-green1);
 }
 .payAgree-label span {
   font-size: 14px;
@@ -563,39 +586,84 @@
 }
 .delivery_select span,
 .delivery_memo span,
-.sober_point span {
+.sober_point span,
+.coupon_fix_wrap > span {
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
 }
 #delivery_place,
 #card_select,
-#coupon_select {
+#coupon_select,
+.coupon_fix {
   all: unset;
   margin-top: 11px;
-  width: 200px;
+  width: 256px;
   height: 40px;
   border: 1px solid #666666;
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 13px 20px;
+  padding: 13px 11px;
   font-size: 12px;
   box-sizing: border-box;
   background: url("/asset/imgs/icons/select_arrow.svg") no-repeat right 24px
     center;
 }
+
 #delivery_place option,
 #card_select option,
 #coupon_select option {
   font-size: 12px;
   background: #000;
 }
+.coupon_fix_wrap {
+  display: flex;
+  align-items: center;
+  padding-bottom: 22px;
+  width: 100%;
+  justify-content: space-between;
+  gap: 11px;
+}
+.coupon_fix {
+  background: none;
+  height: 62px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid var(--color-green1);
+}
+.coupon_fix_title {
+  position: relative;
+}
+.dash-line {
+  width: 34px;
+  height: 1px;
+  border-bottom: 1px dashed #b2b2b2;
+}
+.coupon_fix_title h4 {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--color-green1);
+}
+.coupon_fix_title span {
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  color: #999;
+}
+.coupon_fix-price,
+.fix_price {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--color-green1);
+}
 .delivery_memo textarea {
   all: unset;
   resize: none;
-  width: 200px;
+  width: 256px;
 
   border: 1px solid #666666;
   border-radius: 8px;
@@ -630,8 +698,18 @@
   font-style: normal;
   font-weight: 400;
 }
+.sober_point {
+  border-top: 1px solid #b2b2b2;
+  padding-top: 22px;
+}
 .sober_point_input {
   position: relative;
+}
+.sober_point_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
 }
 .sober_point_input span {
   position: absolute;
@@ -654,7 +732,16 @@
   font-size: 12px;
   box-sizing: border-box;
 }
-
+.sober_point_alarm {
+  font-size: 12px;
+  font-weight: 400;
+  color: #999;
+}
+.use_sober_point {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-green1);
+}
 .point_title span {
   font-size: 16px;
   font-style: normal;
@@ -821,4 +908,57 @@
 }
 #refund_check-input:checked ~ .circle div {
   background-color: var(--color-green1);
+}
+.popup {
+  width: 100%;
+  height: 100vh;
+  background-color: #00000094;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.popup.active {
+  display: flex;
+}
+.popup_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 370px;
+  border-radius: 10px;
+  border: 1px solid var(--color-green1);
+  background: #000;
+}
+.popup_wrap h3 {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  text-align: center;
+}
+.popup_btn {
+  display: flex;
+  height: 38px;
+  width: 128px;
+  border-radius: 10px;
+
+  justify-content: center;
+  background-color: var(--color-green1);
+  align-items: center;
+}
+.popup_btn span {
+  font-size: 14px;
+  font-style: normal;
+  color: #000;
+  font-weight: 500;
+}
+.okBtn {
+  background-color: #1f1f1f;
+}
+.okBtn span {
+  color: #fff;
 }

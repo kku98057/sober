@@ -145,6 +145,8 @@ const getItems = async () => {
 (async () => {
   let items = itemList;
 
+  // 묶음이랑 개별이랑 나눠서..
+
   bundleProduct.innerHTML = items
     .map((item) => {
       const price = item.price.toLocaleString();

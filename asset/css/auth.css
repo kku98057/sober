@@ -228,10 +228,10 @@ section {
 }
 
 .sign_1 input[type="checkbox"]:checked ~ .circle {
-  border: 1px solid #fff;
+  border: 1px solid var(--color-green1);
 }
 .sign_1 input[type="checkbox"]:checked ~ .circle div {
-  background-color: #fff;
+  background-color: var(--color-green1);
 }
 .label-all {
   padding-bottom: 20px;

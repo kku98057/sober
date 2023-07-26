@@ -208,8 +208,9 @@ ScrollTrigger.matchMedia({
 });
 
 // timer
+let timerInterval;
 function updateTimer() {
-  const future = new Date("2023/07/26 00:00:00");
+  const future = new Date("2023/07/26 10:07:59");
   const now = new Date();
 
   const diff = future - now;
@@ -222,13 +223,20 @@ function updateTimer() {
   const m = mins.toString().padStart(2, "0");
   const s = secs.toString().padStart(2, "0");
 
+  if (diff <= 0) {
+    clearInterval(timerInterval);
+    document.querySelector(
+      ".timer"
+    ).innerHTML = `  <span class="hours">00</span>:<span class="minute">00</span>:<span class="second">00</span>`;
+    return;
+  }
+
   document.querySelector(
     ".timer"
   ).innerHTML = `  <span class="hours">${h}</span>:<span class="minute">${m}</span>:<span class="second">${s}</span>`;
 }
 
-setInterval(updateTimer, 1000);
-
+timerInterval = setInterval(updateTimer, 1000);
 // review
 const getReview = async () => {
   return axios.get("/asset/dummy/review.json").then((res) => res.data);
