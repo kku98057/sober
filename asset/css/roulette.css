@@ -4,6 +4,7 @@
 .roulette {
   padding-top: 60px;
 }
+
 .roulette_title {
   margin-bottom: 30px;
 }
@@ -285,4 +286,9 @@
   font-style: normal;
   font-weight: 400;
   text-align: center;
+}
+@media all and (max-width: 420px) and (max-height: 900px) {
+  .roulette {
+    padding-top: 160px;
+  }
 }

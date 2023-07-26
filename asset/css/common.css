@@ -534,4 +534,7 @@ footer {
   .bottomTab {
     position: fixed;
   }
+  footer {
+    padding-bottom: 120px;
+  }
 }
