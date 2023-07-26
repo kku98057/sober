@@ -108,13 +108,18 @@ popupClose.forEach((close, indx) => {
 });
 
 gsap.registerPlugin(ScrollTrigger);
+const slides = document.querySelectorAll(".slide");
 let height = document
   .querySelector(".intro_overlay")
   .getBoundingClientRect().height;
 ScrollTrigger.saveStyles(".intro_overlay");
 
 ScrollTrigger.matchMedia({
-  "(min-width:421px)": () => {},
+  "(min-width:421px)": () => {
+    slides.forEach((slide, idx) => {
+      slide.classList.add(`item-${idx + 1}`);
+    });
+  },
   "(max-width:420px)": () => {
     const loading = gsap
       .timeline({
@@ -141,11 +146,26 @@ ScrollTrigger.matchMedia({
                 scrollTrigger: {
                   trigger: ".hero",
                   pin: true,
-
                   scrub: 0.5,
                   end: "+=3000",
                 },
               })
+              .to(
+                {},
+                {
+                  onComplete: () => {
+                    slides.forEach((slide, idx) => {
+                      slide.classList.add(`item-${idx + 1}`);
+                    });
+                  },
+                  onReverseComplete: () => {
+                    slides.forEach((slide, idx) => {
+                      slide.classList.remove(`item-${idx + 1}`);
+                    });
+                  },
+                },
+                0
+              )
               .to(
                 ".overlay_1",
                 {
@@ -173,7 +193,6 @@ ScrollTrigger.matchMedia({
                 },
                 0
               )
-
               .to(
                 " .video",
                 {
@@ -182,6 +201,7 @@ ScrollTrigger.matchMedia({
                 },
                 1
               );
+
             ScrollTrigger.refresh();
           },
         },
@@ -243,7 +263,7 @@ const getReview = async () => {
 };
 (async () => {
   const review = await getReview();
-  console.log(review);
+
   const review_contents = document.querySelector(".review_contents");
   let html = "";
 

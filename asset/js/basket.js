@@ -1,8 +1,3 @@
-// const token = Cookies.get("token");
-// if (!token) {
-//   window.location.href = "/auth/needLogin.html";
-// }
-
 const bundleProduct = document.querySelector(".bundle_product");
 const individualProduct = document.querySelector(".individual_product");
 

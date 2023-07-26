@@ -27,7 +27,8 @@
 .basket_contents {
   display: flex;
   flex-direction: column;
-  height: 300px;
+  max-height: 300px;
+  height: auto;
   overflow: auto;
 }
 .basket_contents::-webkit-scrollbar {
@@ -128,7 +129,7 @@
 }
 .alarm {
   margin: 0 auto;
-  display: none;
+  display: flex;
   position: relative;
   background-color: #00ff41;
   font-size: 12px;
@@ -142,10 +143,16 @@
 
   align-items: center;
   justify-content: center;
-  max-width: 300px;
+  width: 100%;
   border-radius: 10px;
 }
-
+.bundle_count,
+.item_count {
+  color: #000;
+}
+.bundle_sale_count {
+  color: var(--color-green1);
+}
 .alarm:after {
   border-top: 0px solid transparent;
   border-left: 17px solid transparent;

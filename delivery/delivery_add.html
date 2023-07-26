@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/asset/css/reset.css">
+    <link rel="stylesheet" href="/asset/css/common.css">
+    <link rel="stylesheet" href="/asset/css/delivery.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <header></header>
+        <div class="menu"></div>
+        <main>
+            <section class="delivery">
+                <button type="button" class="back">
+                    <img class="back_arrow" src="/asset/imgs/icons/arrow.svg" alt="back_btn" />
+                    <span>배송지 추가</span>
+                    <span></span>
+                </button>
+                <div class="container">
+                    <h3 class="delivery_text">배송지 추가</h3>
+                    <form action="" class="delivery_form">
+                        <label for="">
+                            <span>배송지 이름</span>
+                            <input type="text" placeholder="배송지 이름을 입력해주세요." required name="title">
+                        </label>
+                        <label for="">
+                            <span>주소지</span>
+                            <input type="text" placeholder="주소지를 입력해주세요." required name="addr1">
+                            <input type="text" placeholder="상세주소를 입력해주세요." required name="addr2">
+                        </label>
+
+                        <label for="">
+                            <span>수령인</span>
+                            <input type="text" placeholder="수령인을 입력해주세요." required name="name">
+                        </label>
+                        <label for="">
+                            <span>연락처</span>
+                            <input type="text" placeholder="연락처를 입력해주세요." required name="tel">
+                        </label>
+                        <button type="submit" class="addBtn delivery_addBtn">
+                            <img src="/asset/imgs/icons/add.png" alt="add">
+                            <span>배송지 추가</span></button>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <footer></footer>
+        <div class="bottomTab"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/asset/js/common.js"></script>
+    <script src="/asset/js/delivery.js"></script>
+
+</body>
+
+</html>

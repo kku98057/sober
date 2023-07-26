@@ -179,9 +179,11 @@ svg {
   height: 100%;
   overflow: hidden;
   position: relative;
+  transform-style: preserve-3d;
   display: flex;
   align-items: center;
   justify-content: center;
+  perspective: 1000px;
 }
 
 .slider {
@@ -193,47 +195,46 @@ svg {
 }
 
 .slide {
-  width: 150px;
-  height: 150px;
+  width: 120%;
   display: flex;
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
   align-items: center;
   justify-content: center;
   transition: transform 1.4s;
 }
 
 .item-1 {
-  transform: translateX(-40%) translateY(-50%) scale(1.5) translate3d(0, 0, 0);
-  z-index: 5;
+  transform: translateX(-49%) translateY(-54%) scale(1.5) translate3d(0, 0, 5px);
+  /* z-index: 5; */
 }
 
 .item-2 {
-  transform: translateX(-80%) translateY(-100%) scale(0.7)
-    translate3d(240%, -10%, 0);
-  z-index: 4;
+  transform: translateX(-9%) translateY(-74%) scale(0.7) translate3d(0, 0, 4px);
+  /* z-index: 4; */
 }
 
 .item-3 {
-  z-index: 3;
-  transform: translateX(-50%) translateY(-130%) scale(0.5)
-    translate3d(180%, -31%, 0);
+  /* z-index: 3; */
+  transform: translateX(-29%) translateY(-94%) scale(0.5) translate3d(0, 0, 3px);
 }
+
 .item-4 {
-  z-index: 2;
-  transform: translateX(-110%) translateY(-150%) scale(0.4)
-    translate3d(180%, -31%, 0);
+  /* z-index: 2; */
+  transform: translateX(-49%) translateY(-101%) scale(0.3)
+    translate3d(0, 0, 2px);
 }
+
 .item-5 {
-  z-index: 1;
-  transform: translateX(-200%) translateY(-130%) scale(0.5)
-    translate3d(180%, -31%, 0);
+  /* z-index: 1; */
+  transform: translateX(-69%) translateY(-94%) scale(0.5) translate3d(0, 0, 1px);
 }
+
 .item-6 {
-  z-index: 0;
-  transform: translateX(-290%) translateY(-100%) scale(0.7)
-    translate3d(180%, -31%, 0);
+  /* z-index: 0; */
+  transform: translateX(-94%) translateY(-74%) scale(0.7) translate3d(0, 0, 0);
 }
 .planet-name {
   position: absolute;

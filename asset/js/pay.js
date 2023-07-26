@@ -63,7 +63,7 @@ okBtn.addEventListener("click", () => {
   alert("결제진행");
 });
 moreBtn.addEventListener("click", () => {
-  popup.classList.remove("active");
+  window.location.href = "/basket/";
 });
 
 function controlPopup(pop) {

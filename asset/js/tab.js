@@ -1,9 +1,8 @@
 const tabBtns = document.querySelectorAll(".tab_btn");
-const contents = document.querySelectorAll(".tracking_contents .content");
+const contents = document.querySelectorAll(".content");
 tabBtns.forEach((btn, idx) => {
   btn.addEventListener("click", () => {
     const btnTarget = btn.dataset.tab;
-
     tabBtns.forEach((item) => {
       item.classList.remove("active");
     });
