@@ -117,19 +117,19 @@ const getBasket = () => {
     <ul class="marquee-line">
         <li><span>ALCOHOL FREE</span></li>
         <li><img src="/asset/imgs/icons/planet.svg" alt="planet"></li>
-        <li><span>FREE SHIPPING OVER 20,000</span></li>
+        <li><span>FREE SHIPPING OVER 50,000</span></li>
         <li><img src="/asset/imgs/icons/planet.svg" alt="planet"></li>
     </ul>
     <ul class="marquee-line">
         <li><span>ALCOHOL FREE</span></li>
         <li><img src="/asset/imgs/icons/planet.svg" alt="planet"></li>
-        <li><span>FREE SHIPPING OVER 20,000</span></li>
+        <li><span>FREE SHIPPING OVER 50,000</span></li>
         <li><img src="/asset/imgs/icons/planet.svg" alt="planet"></li>
     </ul>
     <ul class="marquee-line">
         <li><span>ALCOHOL FREE</span></li>
         <li><img src="/asset/imgs/icons/planet.svg" alt="planet"></li>
-        <li><span>FREE SHIPPING OVER 20,000</span></li>
+        <li><span>FREE SHIPPING OVER 50,000</span></li>
         <li><img src="/asset/imgs/icons/planet.svg" alt="planet"></li>
     </ul>
     </div>`;

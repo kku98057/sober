@@ -9,6 +9,7 @@
   --font-pyeonchang: "PyeongChangPeace-Bold";
   --font-lotteria: "LOTTERIACHAB";
   --font-pretendard: "Pretendard-Regular";
+  --font-gmarket: "GmarketSansMedium";
 }
 @font-face {
   font-family: "Pretendard-Regular";
@@ -45,7 +46,13 @@
   font-weight: normal;
   font-style: normal;
 }
-
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 /* ///////////////////// */
 body {
   background-color: #000000;

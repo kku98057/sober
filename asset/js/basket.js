@@ -1,7 +1,6 @@
 const bundleProduct = document.querySelector(".bundle_product");
 const individualProduct = document.querySelector(".individual_product");
 
-
 const normalPrice = document.querySelector(".normal_price");
 const salePrice = document.querySelector(".sale_price");
 const lastPrice = document.querySelector(".last_price");
@@ -161,12 +160,11 @@ const getItems = async () => {
   let bundleItems = setItemList;
   let pickItems = itemList;
   // 묶음이랑 개별이랑 나눠서..
-  if(bundleItems.length) {
-
-  bundleProduct.innerHTML = bundleItems
-    .map((item) => {
-      const price = item.price.toLocaleString();
-      return `   <li id="bundle_list" class="basket_list">
+  if (bundleItems.length) {
+    bundleProduct.innerHTML = bundleItems
+      .map((item) => {
+        const price = item.price.toLocaleString();
+        return `   <li id="bundle_list" class="basket_list">
         <div class="basket_list-img">
             <img src=${item.image} alt="beer">
         </div>
@@ -190,57 +188,164 @@ const getItems = async () => {
             </div>
         </div>
     </li>`;
-    })
-    .join("");
-    
-  const itemLists = document.querySelectorAll("#bundle_list");
-  const special = document.querySelector("#special_bundle");
-  const alarm = document.querySelector("#bundle_alarm");
-  const alarm2 = document.querySelector('.alarm2');
+      })
+      .join("");
 
-  itemLists.forEach((list, idx) => {
-    list.dataset.index = idx;
-    const close = list.querySelector("#bundle_basket_list-close");
-    // 삭제
-    close.addEventListener("click", (e) => {
-      if (idx === Number(list.dataset.index)) {
-        // 삭제할때 해당하는 물품 금액을 빼줍니다.
-        let itemId = list.querySelector("#bundle_item_idx");
-        let quantity = list.querySelector("#bundle_quantity");
+    const itemLists = document.querySelectorAll("#bundle_list");
+    const special = document.querySelector("#special_bundle");
+    const alarm = document.querySelector("#bundle_alarm");
+    const alarm2 = document.querySelector(".alarm2");
 
-        let itemData = bundleItems.filter(
-          (data) => data["id"] === Number(itemId.textContent)
-        );
+    itemLists.forEach((list, idx) => {
+      list.dataset.index = idx;
+      const close = list.querySelector("#bundle_basket_list-close");
+      // 삭제
+      close.addEventListener("click", (e) => {
+        if (idx === Number(list.dataset.index)) {
+          // 삭제할때 해당하는 물품 금액을 빼줍니다.
+          let itemId = list.querySelector("#bundle_item_idx");
+          let quantity = list.querySelector("#bundle_quantity");
 
-        let thisQuantity = Number(quantity.textContent);
+          let itemData = bundleItems.filter(
+            (data) => data["id"] === Number(itemId.textContent)
+          );
 
-        let thisPrice = Number(itemData[0].price) * itemData[0].amount;
-        let thisDiscount = Number(itemData[0].discount) * itemData[0].amount;
+          let thisQuantity = Number(quantity.textContent);
 
-        console.log(`현재 가격 : ${sum}`);
+          let thisPrice = Number(itemData[0].price) * itemData[0].amount;
+          let thisDiscount = Number(itemData[0].discount) * itemData[0].amount;
 
-        removePrice = sum - thisPrice;
-        removeDiscount = discountSum - thisDiscount;
-        removeTotalPrice = totalSum - (thisPrice - thisDiscount);
+          console.log(`현재 가격 : ${sum}`);
 
-        console.log(`아이템 가격 : ${itemData[0].price}`);
-        console.log(removePrice);
-        normalPrice.innerHTML = `  ${removePrice.toLocaleString()}<span>원</span>`;
-        if (removeDiscount > 0) {
-          salePrice.innerHTML = `  -${removeDiscount.toLocaleString()}<span>원</span>`;
-        } else {
-          salePrice.innerHTML = `  -(${removeDiscount.toLocaleString()})<span>원</span>`;
+          removePrice = sum - thisPrice;
+          removeDiscount = discountSum - thisDiscount;
+          removeTotalPrice = totalSum - (thisPrice - thisDiscount);
+
+          console.log(`아이템 가격 : ${itemData[0].price}`);
+          console.log(removePrice);
+          normalPrice.innerHTML = `  ${removePrice.toLocaleString()}<span>원</span>`;
+          if (removeDiscount > 0) {
+            salePrice.innerHTML = `  -${removeDiscount.toLocaleString()}<span>원</span>`;
+          } else {
+            salePrice.innerHTML = `  -(${removeDiscount.toLocaleString()})<span>원</span>`;
+          }
+
+          lastPrice.innerHTML = `  ${removeTotalPrice.toLocaleString()}<span>원</span>`;
+
+          sum = removePrice;
+          discountSum = removeDiscount;
+          totalSum = removeTotalPrice;
+
+          allQuantity -= itemData[0].amount;
+
+          if (totalSum > 49999) {
+            delPrice = 0;
+          } else {
+            delPrice = 3000;
+            totalSum = totalSum + delPrice;
+          }
+          allToLocale = totalSum.toLocaleString();
+          delToLocale = delPrice.toLocaleString();
+
+          delliveryPrice.innerHTML = `  ${delPrice}<span>원</span>`;
+          lastPrice.innerHTML = `  ${allToLocale}<span>원</span>`;
+          // console.log(`상품 금액 :  ${thisPrice.textContent}  | 상품 갯수 : ${thisQuanity.textContent}`, );
+          list.remove();
         }
+        if (bundleProduct.children.length === 0) {
+          const p = document.createElement("p");
+          p.innerHTML = "비어있습니다.";
+          p.style.cssText = "text-align:center";
+          special.style.display = "none";
+          alarm.style.display = "none";
+          alarm2.style.display = "none";
+          bundleProduct.append(p);
+        }
+      });
 
-        lastPrice.innerHTML = `  ${removeTotalPrice.toLocaleString()}<span>원</span>`;
+      // 카운트
+      let count = 1;
+      const plus = list.querySelector("#bundle_plus");
+      const minus = list.querySelector("#bundle_minus");
+      const quantity = list.querySelector("#bundle_quantity");
 
-        sum = removePrice;
-        discountSum = removeDiscount;
-        totalSum = removeTotalPrice;
+      // const bundle_amount = list.querySelector('#bundle_amount');
+      const price = bundleItems[idx].price;
+      const discount = bundleItems[idx].discount;
+      const amount = bundleItems[idx].amount;
+      const specialBundleText = document.querySelector(".special_bundle_text");
 
-        allQuantity -= itemData[0].amount;
+      let bundleQuantity = 0;
 
-        if(totalSum > 49999) {
+      const initCount = () => {
+        // speical_price.style.display = "none";
+        sum += price * amount;
+        discountSum += discount * amount;
+        bundleQuantity = amount * count;
+        allQuantity += amount;
+        normalAmount(sum);
+        saleAmount(discountSum);
+        allAmount();
+        checkAlarm();
+      };
+
+      const plusCount = () => {
+        count++;
+        sum += price * amount;
+        discountSum += discount * amount;
+        quantity.innerHTML = count;
+
+        bundleQuantity = amount * count;
+        allQuantity += bundleQuantity;
+        normalAmount(sum);
+        saleAmount(discountSum);
+        allAmount();
+        checkAlarm();
+      };
+
+      const minusCount = () => {
+        if (count <= 1) {
+          return;
+        } else {
+          count--;
+          sum -= price * amount;
+          discountSum -= discount * amount;
+          quantity.innerHTML = count;
+
+          bundleQuantity = amount * count;
+          allQuantity -= bundleQuantity;
+          normalAmount(sum);
+          saleAmount(discountSum);
+          allAmount();
+          checkAlarm();
+        }
+      };
+
+      plus.addEventListener("click", plusCount);
+      minus.addEventListener("click", minusCount);
+
+      // 상품의 총합(정상가)
+      const normalAmount = (sum) => {
+        sumToLocale = sum.toLocaleString();
+        console.log(`정상가 합계 : ${sumToLocale}`);
+        return (normalPrice.innerHTML = `  ${sumToLocale}<span>원</span>`);
+        console.log(`가격 총합 : ${sum} | 인덱스 : ${idx}`);
+      };
+
+      const saleAmount = (discount) => {
+        if (discount > 0) {
+          discountToLocale = discount.toLocaleString();
+          return (salePrice.innerHTML = `  -${discountToLocale}<span>원</span>`);
+        } else {
+          return (salePrice.innerHTML = `  -(${discountToLocale})<span>원</span>`);
+        }
+      };
+
+      // 상품의 총합(최종주문금액)
+      const allAmount = () => {
+        totalSum = sum - discountSum;
+        console.log(`가격 총합 : ${totalSum}`);
+        if (totalSum > 49999) {
           delPrice = 0;
         } else {
           delPrice = 3000;
@@ -248,149 +353,39 @@ const getItems = async () => {
         }
         allToLocale = totalSum.toLocaleString();
         delToLocale = delPrice.toLocaleString();
-  
-        delliveryPrice.innerHTML =  `  ${delPrice}<span>원</span>`;
-        lastPrice.innerHTML = `  ${allToLocale}<span>원</span>`;
-        // console.log(`상품 금액 :  ${thisPrice.textContent}  | 상품 갯수 : ${thisQuanity.textContent}`, );
-        list.remove();
-      }
-      if (bundleProduct.children.length === 0) {
-        const p = document.createElement("p");
-        p.innerHTML = "비어있습니다.";
-        p.style.cssText = "text-align:center";
-        special.style.display = "none";
-        alarm.style.display = "none";
-        alarm2.style.display = "none";
-        bundleProduct.append(p);
-      }
-    });
 
-    // 카운트
-    let count = 1;
-    const plus = list.querySelector("#bundle_plus");
-    const minus = list.querySelector("#bundle_minus");
-    const quantity = list.querySelector("#bundle_quantity");
+        delliveryPrice.innerHTML = `  ${delPrice}<span>원</span>`;
+        return (lastPrice.innerHTML = `  ${allToLocale}<span>원</span>`);
+      };
 
-    // const bundle_amount = list.querySelector('#bundle_amount');
-    const price = bundleItems[idx].price;
-    const discount = bundleItems[idx].discount;
-    const amount = bundleItems[idx].amount; 
-    const specialBundleText = document.querySelector(".special_bundle_text");
+      const checkAlarm = () => {
+        if (6 === bundleQuantity) {
+          alarm.style.display = "flex";
+          alarm2.style.display = "block";
+          alarm2.innerHTML = "현재 묶음 배송 3% 할인 혜택 적용";
 
-    let bundleQuantity = 0;
+          special.style.display = "flex";
+          specialBundleText.innerHTML = "묶음배송 3% 할인 혜택";
+          return (alarm.innerHTML = `  [묶음배송 혜택] 6캔 묶음 추가 구매시 7% 할인!`);
+        } else if (12 === bundleQuantity || 18 === bundleQuantity) {
+          alarm.style.display = "flex";
+          alarm2.style.display = "block";
+          alarm2.innerHTML = "현재 묶음 배송 7% 할인 혜택 적용";
 
-    const initCount = () => {
-      // speical_price.style.display = "none";
-      sum += price * amount;
-      discountSum += discount * amount;
-      bundleQuantity = amount * count;
-      allQuantity += amount;
-      normalAmount(sum);
-      saleAmount(discountSum);
-      allAmount();
-      checkAlarm();
-    };
-
-    const plusCount = () => {
-      count++;
-      sum += price * amount;
-      discountSum += discount * amount;
-      quantity.innerHTML = count;
-      
-      bundleQuantity = amount * count;
-      allQuantity += bundleQuantity;
-      normalAmount(sum);
-      saleAmount(discountSum);
-      allAmount();
-      checkAlarm();
-    };
-
-    const minusCount = () => {
-      if (count <= 1) {
-        return;
-      } else {
-        count--;
-        sum -= price * amount;;
-        discountSum -= discount * amount;
-        quantity.innerHTML = count;
-
-        bundleQuantity = amount * count;
-        allQuantity -= bundleQuantity;
-        normalAmount(sum);
-        saleAmount(discountSum);
-        allAmount();
-        checkAlarm();
-      }
-    };
-
-    plus.addEventListener("click", plusCount);
-    minus.addEventListener("click", minusCount);
-
-    // 상품의 총합(정상가)
-    const normalAmount = (sum) => {
-      sumToLocale = sum.toLocaleString();
-      console.log(`정상가 합계 : ${sumToLocale}`);
-      return (normalPrice.innerHTML = `  ${sumToLocale}<span>원</span>`);
-      console.log(`가격 총합 : ${sum} | 인덱스 : ${idx}`);
-    };
-
-    const saleAmount = (discount) => {
-      if (discount > 0) {
-        discountToLocale = discount.toLocaleString();
-        return (salePrice.innerHTML = `  -${discountToLocale}<span>원</span>`);
-      } else {
-        return (salePrice.innerHTML = `  -(${discountToLocale})<span>원</span>`);
-      }
-    };
-
-    // 상품의 총합(최종주문금액)
-    const allAmount = () => {
-
-      
-      totalSum = sum - discountSum;
-      console.log(`가격 총합 : ${totalSum}`);
-      if(totalSum > 49999) {
-        delPrice = 0;
-      } else {
-        delPrice = 3000;
-        totalSum = totalSum + delPrice;
-      }
-      allToLocale = totalSum.toLocaleString();
-      delToLocale = delPrice.toLocaleString();
-
-      delliveryPrice.innerHTML =  `  ${delPrice}<span>원</span>`;
-      return (lastPrice.innerHTML = `  ${allToLocale}<span>원</span>`);
-    };
-
-    const checkAlarm = () => {
-      if (6 === bundleQuantity) {
-        alarm.style.display = "flex";
-        alarm2.style.display = "block";
-        alarm2.innerHTML = "현재 묶음 배송 3% 할인 혜택 적용";
-
-        special.style.display = "flex";
-        specialBundleText.innerHTML = "묶음배송 3% 할인 혜택";
-        return (alarm.innerHTML = `  [묶음배송 혜택] 6캔 묶음 추가 구매시 7% 할인!`);
-      } else if (12 === bundleQuantity || 18 === bundleQuantity) {
-        alarm.style.display = "flex";
-        alarm2.style.display = "block";
-        alarm2.innerHTML = "현재 묶음 배송 7% 할인 혜택 적용";
-
-        special.style.display = "flex";
-        specialBundleText.innerHTML = "묶음배송 7% 할인 혜택";
-        return (alarm.innerHTML = `  [묶음배송 혜택] 6캔 묶음 추가 구매시 12% 할인!`);
-      } else if (24 === bundleQuantity){
-        special.style.display = "flex";
-        specialBundleText.innerHTML = "묶음배송 12% 할인 혜택";
-        alarm2.style.display = "none";
-        return (alarm.innerHTML = `  [묶음배송 혜택] 12% 추가 할인 적용!`);
-      } else if (0 === bundleQuantity){
-        special.style.display = "none";
-        alarm.style.display = "none";
-        alarm2.style.display = "none";
-        return ;
-      }
-
+          special.style.display = "flex";
+          specialBundleText.innerHTML = "묶음배송 7% 할인 혜택";
+          return (alarm.innerHTML = `  [묶음배송 혜택] 6캔 묶음 추가 구매시 12% 할인!`);
+        } else if (24 === bundleQuantity) {
+          special.style.display = "flex";
+          specialBundleText.innerHTML = "묶음배송 12% 할인 혜택";
+          alarm2.style.display = "none";
+          return (alarm.innerHTML = `  [묶음배송 혜택] 12% 추가 할인 적용!`);
+        } else if (0 === bundleQuantity) {
+          special.style.display = "none";
+          alarm.style.display = "none";
+          alarm2.style.display = "none";
+          return;
+        }
       };
       initCount();
     });
@@ -422,12 +417,13 @@ const getItems = async () => {
             </div>
         </div>
     </li>`;
-  }).join("");
+    })
+    .join("");
 
   const itemLists = document.querySelectorAll("#pick_item_list");
   const special = document.querySelector("#special_pick");
   const alarm = document.querySelector("#pick_alarm");
-  
+
   let pickQuantity = 0;
 
   itemLists.forEach((list, idx) => {
@@ -472,7 +468,7 @@ const getItems = async () => {
 
         allQuantity -= thisQuantity;
 
-        if(totalSum > 49999) {
+        if (totalSum > 49999) {
           delPrice = 0;
         } else {
           delPrice = 3000;
@@ -480,8 +476,8 @@ const getItems = async () => {
         }
         allToLocale = totalSum.toLocaleString();
         delToLocale = delPrice.toLocaleString();
-  
-        delliveryPrice.innerHTML =  `  ${delPrice}<span>원</span>`;
+
+        delliveryPrice.innerHTML = `  ${delPrice}<span>원</span>`;
         lastPrice.innerHTML = `  ${allToLocale}<span>원</span>`;
         // console.log(`상품 금액 :  ${thisPrice.textContent}  | 상품 갯수 : ${thisQuanity.textContent}`, );
         list.remove();
@@ -505,9 +501,7 @@ const getItems = async () => {
     // const bundle_amount = list.querySelector('#bundle_amount');
     const price = pickItems[idx].price;
     const discount = pickItems[idx].discount;
-    const amount = pickItems[idx].amount; 
-
-
+    const amount = pickItems[idx].amount;
 
     const initCount = () => {
       // speical_price.style.display = "none";
@@ -526,7 +520,7 @@ const getItems = async () => {
       sum += price * amount;
       discountSum += discount * amount;
       quantity.innerHTML = count;
-      
+
       pickQuantity++;
       allQuantity++;
       normalAmount(sum);
@@ -540,7 +534,7 @@ const getItems = async () => {
         return;
       } else {
         count--;
-        sum -= price * amount;;
+        sum -= price * amount;
         discountSum -= discount * amount;
         quantity.innerHTML = count;
 
@@ -578,7 +572,7 @@ const getItems = async () => {
       totalSum = sum - discountSum;
 
       console.log(`가격 총합 : ${totalSum}`);
-      if(totalSum > 49999) {
+      if (totalSum > 49999) {
         delPrice = 0;
       } else {
         delPrice = 3000;
@@ -587,7 +581,7 @@ const getItems = async () => {
       allToLocale = totalSum.toLocaleString();
       delToLocale = delPrice.toLocaleString();
 
-      delliveryPrice.innerHTML =  `  ${delPrice}<span>원</span>`;
+      delliveryPrice.innerHTML = `  ${delPrice}<span>원</span>`;
       return (lastPrice.innerHTML = `  ${allToLocale}<span>원</span>`);
     };
 
@@ -599,32 +593,31 @@ const getItems = async () => {
       } else if (11 >= pickQuantity) {
         alarm.style.display = "flex";
         let remain = 12 - pickQuantity;
-        console.log(`{남은 숫자 : ${remain}} {골라 담은 숫자 : ${pickQuantity}} `);
+        console.log(
+          `{남은 숫자 : ${remain}} {골라 담은 숫자 : ${pickQuantity}} `
+        );
         special.style.display = "flex";
         special.style.display = "none";
         return (alarm.innerHTML = `  [골라담기 혜택] ${remain}캔 더 담을 시 5% 추가 할인!`);
-      } else if (0 === pickQuantity){
+      } else if (0 === pickQuantity) {
         special.style.display = "none";
         alarm.style.display = "none";
-        return ;
+        return;
       }
-
-      };
-      initCount();
-    });
-  
+    };
+    initCount();
+  });
 
   const btnPay = document.querySelector(".pay_btn");
   const popup = document.querySelector(".popup");
   const btnPopup = document.querySelector(".popup_btn");
 
   const goToPayment = () => {
-
     console.log(` 현재 갯수 : ${allQuantity}`);
-    if(allQuantity < 6) {
+    if (allQuantity < 6) {
       popup.style.display = "flex";
     } else {
-      location.href = "/payment/pay.html";      
+      location.href = "/payment/pay.html";
     }
   };
 

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/asset/css/reset.css">
     <link rel="stylesheet" href="/asset/css/common.css">
     <link rel="stylesheet" href="/asset/css/roulette.css">
+    <link rel="stylesheet" href="/asset/css/event.css">
     <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.3.0/kakao.min.js"
         integrity="sha384-70k0rrouSYPWJt7q9rSTKpiTfX6USlMYjZUtr1Du+9o4cGvhPAWxngdtVZDdErlh" crossorigin="anonymous"></script>
     <script>
@@ -15,105 +16,182 @@
     <script src="
         https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
         "></script>
-
-    <title>Document</title>
+    <title>쏘버 - 이벤트</title>
 </head>
 
 <body>
     <div class="wrap">
-        <header></header>
-        <div class="menu"></div>
+        <header>
+        </header>
+        <button type="button" class="back">
+            <img class="back_arrow" src="../asset/imgs/icons/arrow.svg" alt="back_btn" />
+            <h3>이벤트/포로모션</h3>
+            <span></span>
+        </button>
         <main>
-            <section class="roulette">
+            <section class="event">
+                <div class="event_bg"></div>
                 <div class="container">
-                    <div class="common_title roulette_title">
-                        <p class="common_title-sub">룰렛 돌리고 경품 받아가자!</p>
-                        <h3 class="common_title-line">앱 오픈 기념</h3>
-                        <h3 class="common_title-fill">룰렛 이벤트</h3>
-                    </div>
-                    <div class="roulette_panel">
-                        <div class="char">
-                            <img src="/asset/imgs/char/char_1.svg" alt="캐릭터">
-                        </div>
-                        <div class="panel_title">
-                            <h3>가입후 10,000 원 이상 첫 구매 시<br> 룰렛 1회 참여!</h3>
-                            <span>(할인 적용한 최종 구매가)</span>
-                        </div>
-                        <p>대한민국 NO.1 개인 맞춤 논알콜 주류 플랫폼<br>
-                            <span> “SOBER” 앱 오픈 기념</span>으로<br>
-                            아이패드, 에어팟, 쏘버 굿즈 등<br>
-                            다양한 경품 대방출!
-                        </p>
-                        <p>
-                            친구 초대하면 룰렛 한번 더! 당첨 확률 UP!<br>
-                            친구와 함께! 쏘버와 함께!<br>
-                            나만을 위한 논알콜 음료를 만나보세요!
-                        </p>
-                    </div>
-                    <div class="roulette_event">
-                        <div class="char">
-                            <img src="/asset/imgs/char/char_2.svg" alt="캐릭터2">
-                        </div>
-                        <div class="event_date">
-                            <h4><svg xmlns="http://www.w3.org/2000/svg" width="3" height="11" viewBox="0 0 3 11" fill="none">
-                                    <rect width="3" height="11" fill="#00FF3E" />
-                                </svg> 이벤트 기간</h4>
-                            <span>7. 17(월) ~ 8. 31(목)</span>
-                        </div>
-                        <div class="event_method">
-                            <h4><svg xmlns="http://www.w3.org/2000/svg" width="3" height="11" viewBox="0 0 3 11" fill="none">
-                                    <rect width="3" height="11" fill="#00FF3E" />
-                                </svg>참여 방법</h4>
-                            <ol>
-                                <li><span>하나 . 쏘버 회원가입 후 10,000원 이상 첫 구매!</span></li>
-                                <li class="color"><span>둘. 당첨 확률을 올리고 싶다면 친구 초대!</span></li>
-                                <li><span>셋. 100% 당첨 이벤트로 행복한 하루 보내기!</span></li>
-                            </ol>
-                        </div>
-                    </div>
-                    <div class="roulette_game">
-                        <!-- 룰렛게임 -->
-                        <div class="game">
+                    <div class="event_wrap">
+                        <div class="r_contents">
+                            <div class="roulette_game">
+                                <!-- 룰렛게임 -->
+                                <div class="game">
 
-                        </div>
-                        <span>남은 룰렛 돌리기 찬스 <span class="color chance">1</span>회</span>
-                        <button class="startBtn spin-btn" type="button"><span>룰렛 돌리기</span></button>
-                    </div>
-                </div>
-            </section>
-            <section class="invite">
-                <div class="container">
-                    <div class="invite_papar">
-                        <h3>카카오톡 친구 초대하고</h3>
-                        <h3>룰렛 찬스 받자!</h3>
-                        <p>카카오톡 친구 초대하면 룰렛 찬스를 1회 더 드립니다!<br>
-                            (당첨 확률도 올라가는건 안비밀!)</p>
-                    </div>
-                    <button class="inviteBtn" type="button"><img src="/asset/imgs/icons/kakao.svg" alt=""><span>친구 초대하고 룰렛 찬스 받기!</span></button>
-                </div>
-            </section>
-            <section class="banner">
-                <div class="container">
-                    <div class="banner_wrap">
-                        <div class="char_img">
-                            <img src="/asset/imgs/char/char_3.svg" alt="배너 캐릭터이미지">
-                        </div>
-                        <div class="logo_img">
-                            <img src="/asset/imgs/icons/logo-color.png" alt="배너로고">
+                                </div>
+                                <span>남은 룰렛 돌리기 찬스 <span class="color chance">1</span>회</span>
+                                <button class="startBtn spin-btn" type="button"><span>룰렛 돌리기</span></button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="description">
+            <section class="win">
+                <img src="/asset/imgs/event_2.png" alt="">
+            </section>
+            <section class="tip">
+                <img src="/asset/imgs/event_3.png" alt="">
+            </section>
+            <section class="share">
+                <div class="share_bg">
+                    <img src="/asset/imgs/event_line.png" alt="">
+                </div>
                 <div class="container">
-                    <div class="description_title">
-                        <h4>경품 약관 설명</h4>
+                    <ul class="share_contents">
+                        <li>
+                            <div class="inner">
+                                <div class="title">
+                                    <div class="icons"><img src="/asset/imgs/icons/heart-fill.svg" alt="icons"></div>
+                                    <h3>카카오톡 공유하고</h3>
+                                    <h3>룰렛 찬스 받자!</h3>
+                                    <p>카톡으로 공유하면 룰렛 찬스를 1회 더 드립니다!<br>
+                                        (당첨 확률도 올라가는건 안비밀!)</p>
+                                </div>
+                                <button type="button" class="share_btn share_btn_1 ">
+                                    <img src="/asset/imgs/icons/kakao.svg" alt="kakao">
+                                    <span>카카오톡 공유하고 룰렛 찬스 받기!</span>
+                                </button>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="inner">
+                                <div class="share_alarm">
+                                    <div class="share_img_1">
+                                        <img src="/asset/imgs/char/char_5.png" alt="char_5">
+                                    </div>
+                                    <div class="share_img_2">
+                                        <img src="/asset/imgs/share_alarm.png" alt="share_alarm">
+                                    </div>
+                                </div>
+                                <div class="title">
+                                    <div class="icons"><img src="/asset/imgs/icons/heart-fill.svg" alt="icons"></div>
+                                    <h3>친구 초대하고</h3>
+                                    <h3>룰렛 찬스 받자!</h3>
+                                    <p>친구가 가입하면 룰렛 찬스를 1회 더 드립니다!<br>
+                                        (친구와 나에게 각각 1회 제공)</p>
+                                </div>
+                                <button type="button" class="share_btn share_btn_2 ">
+                                    <img src="/asset/imgs/icons/kakao.svg" alt="kakao">
+                                    <span>카카오톡 공유하고 룰렛 찬스 받기!</span>
+                                </button>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="inner">
+                                <div class="share_char">
+                                    <img src="/asset/imgs/char/char_6.svg" alt="">
+                                </div>
+                                <div class="title">
+                                    <div class="icons"><img src="/asset/imgs/icons/heart-fill.svg" alt="icons"></div>
+                                    <h3>1만원 이상 구매하고</h3>
+                                    <h3>룰렛 찬스 받자!</h3>
+                                    <p>한 캔 배송 이벤트와 다양한 제품 라인업으로<br>
+                                        세상에 없던 논알콜 플렛폼을 경험하세요!</p>
+                                </div>
+                                <div class="share_btns">
+                                    <a href="" type="button" class="item_btn">
+                                        1캔 배송 상품<br>
+                                        보러가기
+                                    </a>
+                                    <a href="" type="button" class="best_btn">
+                                        베스트 아이템<br>
+                                        보러가기</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="warn">
+                <div class="container">
+                    <h3>[이벤트 유의사항]</h3>
+                    <div class="contents">
+                        <div class="content">
+                            <h4>[경품 당첨자 안내]</h4>
+                            <ul class="wara_contents">
+                                <li><span>- 이벤트 종료일인 8월 31일 기준으로 영업일 10일 이내에<br>
+                                        개별 유선 안내됩니다. </span></li>
+                                <li><span> - 당첨자 분들은 개별 유선 안내 전 쏘버마켓 탈퇴 시 당첨 경품은 지급되지 않습니다.</span></li>
+                                <li><span>- 이벤트에서 지급된 쿠폰은 중복 사용이 불가능합니다.</span></li>
+                                <li><span>- 1~2등 당첨 경품에 있어 제품에 대한 문제는<br>
+                                        쏘버마켓에서 책임지지 않습니다.</span></li>
+                                <li><span>- 부정행위로 인한 이벤트 당첨은 당첨 취소 사유이며,<br>
+                                        불이익이 있을 수 있습니다.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="content">
+                            <h4>[1,2등 당첨자 경품 안내]</h4>
+                            <ul class="wara_contents">
+                                <li><span>- 1,2등 당첨자는 개별 유선 안내됩니다.
+                                    </span></li>
+                                <li><span> - 1,2등 경품의 제세공과금은 쏘버마켓에서 부담합니다.</span></li>
+                                <li><span> - 당첨 가액(경품 가액 및 제세공과금)은 당첨자의<br>
+                                        기타소득으로 신고됩니다.</span></li>
+                                <li><span> - 해당 행사 수령액을 포함하여 기타소득이 연간<br>
+                                        3백만원을 초과할 경우 종합소득 신고대상에 해당됩니다.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="content">
+                            <h4>[3,4등 당첨자 경품 안내]</h4>
+                            <ul class="wara_contents">
+                                <li><span>- 3등 경품 경우 전 제품 FREE사이즈 기준이며,<br>
+                                        별도의 사이즈 지정은 불가능합니다.
+                                    </span></li>
+                                <li><span> - 4등 경품 경우 쏘버마켓에서 선별한 제품으로 배송되며,<br>
+                                        별도의 제품 지정은 불가능합니다.</span></li>
+                                <li><span> - 3,4등 당첨자는 개별 유선 안내됩니다.</span></li>
+                                <li><span> - 3,4등 경품의 제세공과금은 쏘버마켓에서 부담합니다.</span></li>
+                            </ul>
+                        </div>
+                        <div class="content">
+                            <h4>[5,6등 당첨자 경품 안내]</h4>
+                            <ul class="wara_contents">
+                                <li><span>- 5,6등 당첨자의 경우 마이페이지로 발송될 예정이며,<br>
+                                        제공된 쿠폰은 [마이페이지 '쿠폰함'] 에서 확인 가능합니다.
+                                    </span></li>
+                                <li><span> - 혜택 제공 이전 쏘버마켓 탈퇴 시 혜택 제공이 불가하며,<br>
+                                        쿠폰의 기한연장 및 재발송이 불가하오니<br>
+                                        유의하시기 바랍니다.</span></li>
+                            </ul>
+                        </div>
+                        <div class="coutent_img">
+                            <img src="/asset/imgs/char/char_2.svg" alt="char_2">
+                        </div>
                     </div>
                 </div>
             </section>
         </main>
-        <footer></footer>
         <div class="bottomTab"></div>
+        <div class="popup">
+            <div class="popup_wrap">
+                <h3>룰렛권을 모두 소진하셨네요!<br>
+                    다양한 이벤트로 룰렛권을 획득 하세요!</h3>
+                <button type="button" class="confirm_btn"><span>확인</span></button>
+            </div>
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
