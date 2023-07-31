@@ -1,11 +1,11 @@
 const marketSwiper = new Swiper(".sale_slider", {
-  // effect: "coverflow", // 커버플로우 효과 사용
-  // coverflowEffect: {
-  //   rotate: 0,
-  //   stretch: 0,
-  //   // depth: 100,
-  //   slideShadows: false,
-  // },
+  effect: "coverflow", // 커버플로우 효과 사용
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 0,
+    depth: 100,
+    slideShadows: false,
+  },
   pagination: {
     el: ".sale_pagination",
     bulletActiveClass: "active",
@@ -16,23 +16,13 @@ const marketSwiper = new Swiper(".sale_slider", {
     prevEl: ".sale_prev",
     nextEl: ".sale_next",
   },
-
-  // on: {
-  //   slideChange: (e, a) => {
-  //     const nubs = document.querySelectorAll(".sale_nub");
-  //     nubs.forEach((nub)=>{
-  //       nub.innerHTML = `${e.activeIndex}/${e.slides.length}`;
-  //     })
-
-  //   },
-  // },
 });
 const slider_items = document.querySelectorAll(".slide");
 const planet_name = document.querySelectorAll(".planet-name");
 const next = document.querySelector(".next");
 const prev = document.querySelector(".prev");
 const body = document.querySelector("body");
-const names = ["저칼로리", "비건", "논알콜", "과실", "프리미엄", "아이템"];
+const names = ["논알콜", "저칼로리", "비건", "과실", "프리미엄", "아이템"];
 let selected_item = 0;
 
 function setItemSlider(index) {
@@ -80,32 +70,53 @@ prev.addEventListener("click", () => {
 });
 
 // popup
-const popup2 = document.querySelectorAll(".popup2,.popup3");
-const popupClose = document.querySelectorAll(".popup2 .close, .popup3 .close");
+const pops = document.querySelectorAll(".pop");
 
-popup2.forEach((pop, idx) => {
-  if (
-    popup2[0].classList.contains("visible") &&
-    popup2[1].classList.contains("visible")
-  ) {
-    body.classList.add("active");
-  }
-});
-popupClose.forEach((close, indx) => {
-  close.addEventListener("click", () => {
-    popup2[indx].classList.add("hidden");
-    popup2[indx].classList.remove("visible");
+if (pops) {
+  pops.forEach((pop, idx) => {
+    const timeCookies = Cookies.get(`pop-${idx}`);
+    if (timeCookies) {
+      body.classList.remove("active");
+      const expiryDate = new Date(timeCookies);
+      if (expiryDate > new Date()) {
+        pop.classList.add("hidden");
+        pop.classList.remove("visible");
+      }
+    }
 
-    popup2.forEach((pop, idx) => {
-      if (
-        popup2[0].classList.contains("hidden") &&
-        popup2[1].classList.contains("hidden")
-      ) {
-        body.classList.remove("active");
+    const close = pop.querySelector(".close");
+    close.addEventListener("click", () => {
+      pop.classList.add("hidden");
+      pop.classList.remove("visible");
+
+      // let isVisible = false;
+      // pops.forEach((pop) => {
+      //   if (pop.classList.contains("visible")) {
+      //     isVisible = true;
+      //   }
+      // });
+
+      // if (isVisible) {
+      //   document.body.classList.add("active");
+      // } else {
+      //   document.body.classList.remove("active");
+      // }
+    });
+    // 더이상 보지않기 체크
+    const today = pop.querySelector(".today label input");
+    today.addEventListener("click", () => {
+      const checked = today.checked;
+
+      if (checked) {
+        let expiryDate = new Date();
+        expiryDate.setHours(expiryDate.getHours() + 24); // 24시간 후로 만료 시간 설정
+        Cookies.set(`pop-${idx}`, expiryDate.toISOString(), { expires: 1 }); // 쿠키 만료 시간 설정
+      } else {
+        Cookies.remove(`pop-${idx}`);
       }
     });
   });
-});
+}
 
 gsap.registerPlugin(ScrollTrigger);
 const slides = document.querySelectorAll(".slide");
@@ -113,7 +124,6 @@ let height = document
   .querySelector(".intro_overlay")
   .getBoundingClientRect().height;
 ScrollTrigger.saveStyles(".intro_overlay");
-
 ScrollTrigger.matchMedia({
   "(min-width:421px)": () => {
     slides.forEach((slide, idx) => {
@@ -229,6 +239,8 @@ ScrollTrigger.matchMedia({
 
 // timer
 let timerInterval;
+const popup3 = document.querySelector(".popup3");
+
 function updateTimer() {
   const future = new Date("2023/07/26 10:07:59");
   const now = new Date();
@@ -255,8 +267,9 @@ function updateTimer() {
     ".timer"
   ).innerHTML = `  <span class="hours">${h}</span>:<span class="minute">${m}</span>:<span class="second">${s}</span>`;
 }
-
-timerInterval = setInterval(updateTimer, 1000);
+if (popup3) {
+  timerInterval = setInterval(updateTimer, 1000);
+}
 // review
 const getReview = async () => {
   return axios.get("/asset/dummy/review.json").then((res) => res.data);

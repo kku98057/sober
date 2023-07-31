@@ -166,6 +166,9 @@ header .container {
   align-items: center;
   animation: bar 10s infinite linear;
 }
+.marquee_wrap_2 {
+  animation: bar 30s infinite linear;
+}
 @keyframes bar {
   0% {
     transform: translate(0, 0);

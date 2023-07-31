@@ -74,6 +74,7 @@ header .header_wrap {
   flex-direction: column;
   align-items: center;
   padding: 50px 0;
+  overflow: hidden;
   gap: 90px;
 }
 .share_contents li {
@@ -138,7 +139,7 @@ header .header_wrap {
   position: absolute;
   right: 0;
   top: 0;
-  transform: translate(100%, -100%);
+  transform: translate(55%, -100%);
 }
 .share_btn {
   display: flex;

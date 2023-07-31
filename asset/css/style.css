@@ -41,7 +41,12 @@ section {
 main {
   width: 100%;
 }
-
+.intro_pop {
+  position: absolute;
+  right: 20px;
+  width: 218px;
+  bottom: 25%;
+}
 .intro-1 {
   top: 0;
   left: 0;
@@ -261,13 +266,13 @@ svg {
   pointer-events: initial;
 }
 .planet-name1 {
-  background-color: #ff30a9;
+  background-color: #eec300;
 }
 .planet-name2 {
-  background-color: #00e16c;
+  background-color: #ff30a9;
 }
 .planet-name3 {
-  background-color: #eec300;
+  background-color: #00e16c;
 }
 .planet-name4 {
   background-color: #ff8a00;
@@ -603,6 +608,7 @@ svg {
 .popup2_wrap,
 .popup3_wrap {
   max-width: 420px;
+  position: relative;
 
   width: 100%;
   display: flex;
@@ -616,7 +622,10 @@ svg {
   width: 32px;
   cursor: pointer;
 }
-.popup2_layout,
+.popup2_layout {
+  width: 100%;
+  max-width: 378px;
+}
 .popup3_layout {
   width: 90%;
   border: 2px solid var(--color-green2);
@@ -632,21 +641,11 @@ svg {
   z-index: 0;
   margin-bottom: 12px;
 }
-.popup2 .common_title-sub,
+
 .popup3 .common_title-sub {
   margin-bottom: 2px;
 }
-.popup2_layout-bg {
-  z-index: 0;
-  background: url(/asset/imgs/popup_bg.svg) no-repeat center/cover;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #000000;
-  animation: bg 2s infinite linear alternate;
-}
+
 .popup3_layout-bg {
   z-index: 0;
   background: url(/asset/imgs/popup_line.png) no-repeat center/cover;
@@ -774,6 +773,13 @@ svg {
   font-weight: 700;
   color: #000;
 }
+.roulette_btn {
+  position: absolute;
+  max-width: 70%;
+  left: 50%;
+  bottom: 30px;
+  transform: translate(-50%, 0);
+}
 @keyframes bg {
   0% {
     filter: brightness(0.5) hue-rotate(0);
@@ -781,6 +787,12 @@ svg {
   100% {
     filter: brightness(1) hue-rotate(360deg);
   }
+}
+
+.today label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 @media all and (max-width: 420px) and (max-height: 900px) {
   main {

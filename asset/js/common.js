@@ -1,14 +1,12 @@
-const getBasket = () => {
-  return axios.get("/asset/dummy/basket.json").then((res) => res.data);
-};
-(async () => {
-  const basket = await getBasket();
+const token = Cookies.get("token");
 
-  const header = document.querySelector("header");
-  const bottomTab = document.querySelector(".bottomTab");
-  const footer = document.querySelector("footer");
-  if (header) {
-    header.innerHTML = `
+const BASKETLENGTH = 0;
+
+const header = document.querySelector("header");
+const bottomTab = document.querySelector(".bottomTab");
+const footer = document.querySelector("footer");
+if (header) {
+  header.innerHTML = `
     <div class="container">
  <div class="marquee">
  
@@ -20,17 +18,17 @@ const getBasket = () => {
      </div>
  </div>
  </div>`;
-    const header_wrap = document.querySelector(".header_wrap");
-    window.addEventListener("scroll", (e) => {
-      if (window.scrollY > 70) {
-        header_wrap.style.backgroundColor = "#000000";
-      } else {
-        header_wrap.style.backgroundColor = "#00000070";
-      }
-    });
-  }
-  if (footer) {
-    footer.innerHTML = `     <div class="container">
+  const header_wrap = document.querySelector(".header_wrap");
+  window.addEventListener("scroll", (e) => {
+    if (window.scrollY > 70) {
+      header_wrap.style.backgroundColor = "#000000";
+    } else {
+      header_wrap.style.backgroundColor = "#00000070";
+    }
+  });
+}
+if (footer) {
+  footer.innerHTML = `     <div class="container">
 <div class="footer_wrap">
     <div class="footer_logo">
         <img src="/asset/imgs/icons/logo.svg" alt="footer-logo">
@@ -54,9 +52,9 @@ const getBasket = () => {
     <p class='copyright'>Copyright ⓒ 2023 비어벨트코리아 All rights reserved.</p>
 </div>
 </div>`;
-  }
-  if (bottomTab) {
-    bottomTab.innerHTML = `
+}
+if (bottomTab) {
+  bottomTab.innerHTML = `
     <div class="container">
         <div class="common_wrap">
             <ul>
@@ -86,7 +84,7 @@ const getBasket = () => {
                 </li>
                 <li>
                     <a href="/basket/">
-                    <div class="basket_count">${basket.length}</div>
+                    <div class="basket_count">${BASKETLENGTH}</div>
                         <div class="bottomTab_img footer_img-basket">
                             <img src="/asset/imgs/icons/basket.svg" alt="basket">
                         </div>
@@ -104,16 +102,16 @@ const getBasket = () => {
             </ul>
         </div>
     </div>`;
-  }
+}
 
-  const marquee = document.querySelector(".marquee")
-    ? document.querySelector(".marquee")
-    : null;
-  const sale_marquee = document.querySelector(".sale_marquee")
-    ? document.querySelector(".sale_marquee")
-    : null;
-  if (marquee) {
-    marquee.innerHTML = `<div class="marquee_wrap">
+const marquee = document.querySelector(".marquee")
+  ? document.querySelector(".marquee")
+  : null;
+const sale_marquee = document.querySelector(".sale_marquee")
+  ? document.querySelector(".sale_marquee")
+  : null;
+if (marquee) {
+  marquee.innerHTML = `<div class="marquee_wrap">
     <ul class="marquee-line">
         <li><span>ALCOHOL FREE</span></li>
         <li><img src="/asset/imgs/icons/planet.svg" alt="planet"></li>
@@ -133,30 +131,55 @@ const getBasket = () => {
         <li><img src="/asset/imgs/icons/planet.svg" alt="planet"></li>
     </ul>
     </div>`;
-  }
-  if (sale_marquee) {
-    sale_marquee.innerHTML = `<div class="marquee_wrap">
+}
+if (sale_marquee) {
+  sale_marquee.innerHTML = `<div class="marquee_wrap marquee_wrap_2">
 <ul class="marquee-line">
-    <li><img src="/asset/imgs/sale/hite.png" alt="planet"></li>
-    <li><img src="/asset/imgs/sale/brand-logo.png" alt=""></li>
-    <li><img src="/asset/imgs/sale/cass.png" alt="planet"></li>
+    <li><img src="/asset/imgs/banners/b_1.png" alt="b_1"></li>
+    <li><img src="/asset/imgs/banners/b_2.png" alt="b_2"></li>
+    <li><img src="/asset/imgs/banners/b_3.png" alt="b_3"></li>
+    <li><img src="/asset/imgs/banners/b_4.png" alt="b_4"></li>
+    <li><img src="/asset/imgs/banners/b_5.png" alt="b_5"></li>
+    <li><img src="/asset/imgs/banners/b_6.png" alt="b_6"></li>
+    <li><img src="/asset/imgs/banners/b_7.png" alt="b_7"></li>
+    <li><img src="/asset/imgs/banners/b_8.png" alt="b_8"></li>
+    <li><img src="/asset/imgs/banners/b_9.png" alt="b_9"></li>
+    <li><img src="/asset/imgs/banners/b_10.png" alt="b_10"></li>
+    <li><img src="/asset/imgs/banners/b_11.png" alt="b_11"></li>
 </ul>
 <ul class="marquee-line">
-    <li><img src="/asset/imgs/sale/hite.png" alt="planet"></li>
-    <li><img src="/asset/imgs/sale/brand-logo.png" alt=""></li>
-    <li><img src="/asset/imgs/sale/cass.png" alt="planet"></li>
+    <li><img src="/asset/imgs/banners/b_1.png" alt="b_1"></li>
+    <li><img src="/asset/imgs/banners/b_2.png" alt="b_2"></li>
+    <li><img src="/asset/imgs/banners/b_3.png" alt="b_3"></li>
+    <li><img src="/asset/imgs/banners/b_4.png" alt="b_4"></li>
+    <li><img src="/asset/imgs/banners/b_5.png" alt="b_5"></li>
+    <li><img src="/asset/imgs/banners/b_6.png" alt="b_6"></li>
+    <li><img src="/asset/imgs/banners/b_7.png" alt="b_7"></li>
+    <li><img src="/asset/imgs/banners/b_8.png" alt="b_8"></li>
+    <li><img src="/asset/imgs/banners/b_9.png" alt="b_9"></li>
+    <li><img src="/asset/imgs/banners/b_10.png" alt="b_10"></li>
+    <li><img src="/asset/imgs/banners/b_11.png" alt="b_11"></li>
 </ul>
 <ul class="marquee-line">
-    <li><img src="/asset/imgs/sale/hite.png" alt="planet"></li>
-    <li><img src="/asset/imgs/sale/brand-logo.png" alt=""></li>
-    <li><img src="/asset/imgs/sale/cass.png" alt="planet"></li>
+    <li><img src="/asset/imgs/banners/b_1.png" alt="b_1"></li>
+    <li><img src="/asset/imgs/banners/b_2.png" alt="b_2"></li>
+    <li><img src="/asset/imgs/banners/b_3.png" alt="b_3"></li>
+    <li><img src="/asset/imgs/banners/b_4.png" alt="b_4"></li>
+    <li><img src="/asset/imgs/banners/b_5.png" alt="b_5"></li>
+    <li><img src="/asset/imgs/banners/b_6.png" alt="b_6"></li>
+    <li><img src="/asset/imgs/banners/b_7.png" alt="b_7"></li>
+    <li><img src="/asset/imgs/banners/b_8.png" alt="b_8"></li>
+    <li><img src="/asset/imgs/banners/b_9.png" alt="b_9"></li>
+    <li><img src="/asset/imgs/banners/b_10.png" alt="b_10"></li>
+    <li><img src="/asset/imgs/banners/b_11.png" alt="b_11"></li>
 </ul>
-</div>`;
-  }
 
-  const menu = document.querySelector(".menu");
-  if (menu) {
-    menu.innerHTML = `
+</div>`;
+}
+
+const menus = document.querySelector(".menu");
+if (menus) {
+  menus.innerHTML = `
 
     <div class="container">
   <div class="menu_wrap">
@@ -187,51 +210,58 @@ const getBasket = () => {
               <li><a href="">매거진</a></li>
           </ul> 
           <ul class="auth_ul">
-              <li><a href="/auth/login.html">로그인</a></li>
+          ${
+            token
+              ? ` <li>
+                <a href="/bbs/logout.php">로그아웃</a>
+              </li>`
+              : ` <li>
+                <a href="/auth/login.html">로그인</a>
+              </li>`
+          }
               <li><a href="">브랜드스토리</a></li>
           </ul>
   
       </div>
   </div>
   </div>`;
-    const menuBtn = document.querySelector(".menu_btn");
-    const auth_ul = document.querySelector(".auth_ul");
-    const body = document.querySelector("body");
-    const menu_close = document.querySelector(".menu-close");
-    const tl = gsap.timeline({ paused: true });
-    tl.to(".menu_bottom li a", {
-      yPercent: -100,
-      stagger: 0.1,
-    }).to(
-      auth_ul,
-      {
-        yPercent: -30,
-        opacity: 1,
-        duration: 0.1,
-      },
-      ">-0.2"
-    );
-    menuBtn.addEventListener("click", () => {
-      menu.classList.add("active");
-      body.classList.add("active");
-      tl.play();
-    });
-    menu_close.addEventListener("click", () => {
-      setTimeout(() => {
-        menu.classList.remove("active");
-        body.classList.remove("active");
-      }, 1250);
-      tl.reverse();
-    });
-  }
+  const menuBtn = document.querySelector(".menu_btn");
+  const auth_ul = document.querySelector(".auth_ul");
+  const body = document.querySelector("body");
+  const menu_close = document.querySelector(".menu-close");
+  const tl = gsap.timeline({ paused: true });
+  tl.to(".menu_bottom li a", {
+    yPercent: -100,
+    stagger: 0.1,
+  }).to(
+    auth_ul,
+    {
+      yPercent: -30,
+      opacity: 1,
+      duration: 0.1,
+    },
+    ">-0.2"
+  );
+  menuBtn.addEventListener("click", () => {
+    menus.classList.add("active");
+    body.classList.add("active");
+    tl.play();
+  });
+  menu_close.addEventListener("click", () => {
+    setTimeout(() => {
+      menus.classList.remove("active");
+      body.classList.remove("active");
+    }, 1250);
+    tl.reverse();
+  });
+}
 
-  // back
-  function backBtn() {
-    window.history.back();
-  }
+// back
+function backBtn() {
+  window.history.back();
+}
 
-  if (document.querySelector(".back")) {
-    const back = document.querySelector(".back");
-    back.addEventListener("click", backBtn);
-  }
-})();
+if (document.querySelector(".back")) {
+  const back = document.querySelector(".back");
+  back.addEventListener("click", backBtn);
+}
