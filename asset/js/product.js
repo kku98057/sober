@@ -7,7 +7,7 @@ const itemList = [
     type: "can",
     price: 1000,
     discount: 100,
-    image: "../asset/imgs/hite.png",
+    image: "/asset/imgs/hite.png",
     sale: 3,
   },
   {
@@ -18,7 +18,7 @@ const itemList = [
     type: "can",
     price: 2000,
     discount: 0,
-    image: "../asset/imgs/baba.png",
+    image: "/asset/imgs/baba.png",
     sale: 5,
   },
   {
@@ -29,7 +29,7 @@ const itemList = [
     type: "can",
     price: 3000,
     discount: 0,
-    image: "../asset/imgs/angel.png",
+    image: "/asset/imgs/angel.png",
     sale: 7,
   },
 ];

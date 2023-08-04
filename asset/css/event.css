@@ -14,7 +14,7 @@
 header {
   height: 30px;
 }
-header .header_wrap {
+header .wrap_none {
   display: none;
 }
 .event_wrap {

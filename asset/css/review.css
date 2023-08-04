@@ -1,0 +1,143 @@
+.wrap {
+  background-color: #181818;
+}
+.back {
+  background-color: transparent;
+}
+.review_contents {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.reveiw_content {
+  padding: 18px 0;
+  border-top: 1px solid #666666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.reveiw_content h3 {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--color-green1);
+  display: inline-block;
+  margin-bottom: 15px;
+  position: relative;
+}
+.reveiw_content h3:after {
+  content: attr(data-sub);
+  position: absolute;
+  bottom: 0;
+  white-space: nowrap;
+  left: 102%;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--color-green1);
+}
+.review_list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.review_list:nth-child(1) {
+  padding: 0 36px;
+}
+.review_list:nth-child(2) {
+  padding: 0 27px;
+}
+.review_list:nth-child(3) {
+  padding: 0 66px;
+}
+.reveiw_content label {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.reveiw_content label input {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  left: -9999px;
+}
+.reveiw_content label span {
+  border: 1px solid var(--color-green1);
+  border-radius: 50px;
+  font-size: 14px;
+  font-style: normal;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 6px 16px;
+}
+.reveiw_content label input:checked ~ span {
+  background-color: var(--color-green1);
+  color: #000;
+}
+
+.reveiw_star {
+  width: 100%;
+  border-radius: 10px;
+  padding: 14px 0;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  gap: 1px;
+}
+.reveiw_star h3 {
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--color-green1);
+}
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 22px;
+}
+.reveiw_star label {
+  position: relative;
+}
+.reveiw_star label input {
+  display: none;
+}
+.star-checked {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+}
+.star-checked,
+.star-nonchecked {
+  width: 25px;
+}
+.reveiw_star label input:checked ~ .star-checked {
+  opacity: 1;
+}
+.reveiw_star label input:checked ~ .star-nonchecked {
+  opacity: 0;
+}
+.complete_btn {
+  width: 100%;
+  padding: 17px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: var(--color-green1);
+}
+.complete_btn span {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  color: #000;
+}

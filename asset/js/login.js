@@ -1,8 +1,8 @@
 ///////////////////카카오로그인
 //신규회원인경우
-const REDIRECT_URL_NEW = "http://127.0.0.1:5501/auth/signup/complete.html";
-// 이미 회원인 경우 'http://sobermarket.co.kr/main/main.php'
-const REDIRECT_URL = "http://127.0.0.1:5501/auth/connect_kakao.html";
+const REDIRECT_URL_NEW = "/auth/signup/complete.html";
+
+const REDIRECT_URL = "/auth/connect_kakao.html";
 
 function loginWithKakao() {
   Kakao.Auth.authorize({

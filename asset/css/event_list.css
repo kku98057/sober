@@ -1,0 +1,145 @@
+.wrap {
+  background-color: #181818;
+}
+.event_list_title {
+  margin-bottom: 62px;
+}
+.event_list {
+  padding-top: 100px;
+}
+.list_contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+.tab {
+  margin-top: 27px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 35px;
+  overflow: hidden;
+
+  border: 1px solid var(--color-green1);
+}
+.tab_btn {
+  flex: 1;
+
+  text-align: center;
+  padding: 8px 50px;
+}
+.tab_btn.active {
+  background-color: var(--color-green1);
+  border-radius: 35px;
+}
+.tab_btn span {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+
+  font-family: var(--font-changwon);
+  color: var(--color-green1);
+}
+.tab_btn.active span {
+  color: #000;
+}
+.content {
+  gap: 30px;
+
+  width: 100%;
+  flex-direction: column;
+
+  display: none;
+}
+.content.active {
+  display: flex;
+}
+.content li {
+  position: relative;
+}
+.list_inner {
+  border-radius: 10px;
+  width: 100%;
+  background-color: #000;
+  overflow: hidden;
+}
+.list_inner_img {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.list_inner_data {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 13px;
+}
+.inner_data-top {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  justify-content: space-between;
+}
+.inner_data-top h3 {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  flex: 1;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  padding: 0 14px;
+  height: 26px;
+  background-color: var(--color-green1);
+}
+.status span {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px; /* 120% */
+  color: #000;
+}
+.inner_data-date {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px; /* 128.571% */
+  color: #999;
+  margin-top: 2px;
+}
+.inner_data-date span {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px; /* 128.571% */
+  color: #999;
+}
+/* 종료 */
+.close {
+  pointer-events: none;
+}
+.close:after {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #00000067;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+}
+.close .status {
+  background-color: #ffffff;
+}

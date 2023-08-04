@@ -63,7 +63,7 @@ okBtn.addEventListener("click", () => {
   alert("결제진행");
 });
 moreBtn.addEventListener("click", () => {
-  window.location.href = "/basket/";
+  window.location.href = "../../basket/";
 });
 
 function controlPopup(pop) {

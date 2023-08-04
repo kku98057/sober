@@ -15,7 +15,7 @@ if (deliveryAddBtn) {
     if (checke) {
       alert("배송지가 추가되었습니다.");
       //   추가API
-      window.location.href = "/delivery/delivery_info.html";
+      window.location.href = "../../delivery/delivery_info.html";
     } else {
       alert("모두 입력해주세요.");
     }
@@ -74,7 +74,7 @@ if (deliveryUpdateBtn) {
     if (checke) {
       alert("배송지가 수정되었습니다.");
       //   수정 API
-      window.location.href = "/delivery/delivery_info.html";
+      window.location.href = "../../delivery/delivery_info.html";
     } else {
       alert("모두 입력해주세요.");
     }

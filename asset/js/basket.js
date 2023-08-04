@@ -30,7 +30,7 @@ const itemList = [
     type: "can",
     price: 1000,
     discount: 100,
-    image: "../asset/imgs/hite.png",
+    image: "/asset/imgs/hite.png",
   },
   {
     id: 5,
@@ -40,7 +40,7 @@ const itemList = [
     type: "can",
     price: 2000,
     discount: 0,
-    image: "../asset/imgs/baba.png",
+    image: "/asset/imgs/baba.png",
   },
   {
     id: 9,
@@ -50,7 +50,7 @@ const itemList = [
     type: "can",
     price: 3000,
     discount: 0,
-    image: "../asset/imgs/angel.png",
+    image: "/asset/imgs/angel.png",
   },
 ];
 
@@ -63,7 +63,7 @@ const setItemList = [
     type: "can",
     price: 6000,
     discount: 30,
-    image: "../asset/imgs/hite.png",
+    image: "/asset/imgs/hite.png",
   },
   // {
   //   id: 3,
@@ -73,7 +73,7 @@ const setItemList = [
   //   type: "can",
   //   price: 12000,
   //   discount: 70,
-  //   image: "../asset/imgs/hite.png",
+  //   image: "/asset/imgs/hite.png",
   // },
   // {
   //   id: 4,
@@ -83,7 +83,7 @@ const setItemList = [
   //   type: "can",
   //   price: 24000,
   //   discount: 120,
-  //   image: "../asset/imgs/hite.png",
+  //   image: "/asset/imgs/hite.png",
   // },
   // {
   //   id: 6,
@@ -93,7 +93,7 @@ const setItemList = [
   //   type: "can",
   //   price: 12000,
   //   discount: 30,
-  //   image: "../asset/imgs/baba.png",
+  //   image: "/asset/imgs/baba.png",
   // },
   // {
   //   id: 7,
@@ -103,7 +103,7 @@ const setItemList = [
   //   type: "can",
   //   price: 24000,
   //   discount: 60,
-  //   image: "../asset/imgs/baba.png",
+  //   image: "/asset/imgs/baba.png",
   // },
   // {
   //   id: 8,
@@ -113,7 +113,7 @@ const setItemList = [
   //   type: "can",
   //   price: 48000,
   //   discount: 120,
-  //   image: "../asset/imgs/baba.png",
+  //   image: "/asset/imgs/baba.png",
   // },
   // {
   //   id: 9,
@@ -123,7 +123,7 @@ const setItemList = [
   //   type: "can",
   //   price: 18000,
   //   discount: 30,
-  //   image: "../asset/imgs/angel.png",
+  //   image: "/asset/imgs/angel.png",
   // },
   // {
   //   id: 10,
@@ -133,7 +133,7 @@ const setItemList = [
   //   type: "can",
   //   price: 36000,
   //   discount: 60,
-  //   image: "../asset/imgs/angel.png",
+  //   image: "/asset/imgs/angel.png",
   // },
   // {
   //   id: 11,
@@ -143,7 +143,7 @@ const setItemList = [
   //   type: "can",
   //   price: 72000,
   //   discount: 120,
-  //   image: "../asset/imgs/angel.png",
+  //   image: "/asset/imgs/angel.png",
   // },
 ];
 
@@ -173,7 +173,7 @@ const getItems = async () => {
                 <div class="basket_text">
                     <h3>${item.name}</h3>
                     <div id="bundle_basket_list-close" class="basket_list-close">
-                        <img src="../asset/imgs/icons/close.svg" alt="close">
+                        <img src="/asset/imgs/icons/close.svg" alt="close">
                     </div>
                 </div>
                 <h4 id="bundle_price" class="price">${price}<span>원</span></h4>
@@ -182,9 +182,9 @@ const getItems = async () => {
             </div>
     
             <div id="bundle_count" class="count">
-                <button id="bundle_minus"class="minus" type="button"><img src="../asset/imgs/icons/minus.svg" alt="minus"></button>
+                <button id="bundle_minus"class="minus" type="button"><img src="/asset/imgs/icons/minus.svg" alt="minus"></button>
                 <span id="bundle_quantity" class="quantity">1</span>
-                <button id="bundle_plus"class="plus" type="button"><img src="../asset/imgs/icons/plus.svg" alt="plus"></button>
+                <button id="bundle_plus"class="plus" type="button"><img src="/asset/imgs/icons/plus.svg" alt="plus"></button>
             </div>
         </div>
     </li>`;
@@ -403,7 +403,7 @@ const getItems = async () => {
                 <div class="basket_text">
                     <h3>${item.name}</h3>
                     <div id="pick_basket_list-close" class="basket_list-close">
-                        <img src="../asset/imgs/icons/close.svg" alt="close">
+                        <img src="/asset/imgs/icons/close.svg" alt="close">
                     </div>
                 </div>
                 <h4 class="price">${price}<span>원</span></h4>
@@ -411,9 +411,9 @@ const getItems = async () => {
             </div>
     
             <div class="count">
-                <button id="pick_minus" class="minus" type="button"><img src="../asset/imgs/icons/minus.svg" alt="minus"></button>
+                <button id="pick_minus" class="minus" type="button"><img src="/asset/imgs/icons/minus.svg" alt="minus"></button>
                 <span id="pick_quantity" class="quantity">1</span>
-                <button id="pick_plus" class="plus" type="button"><img src="../asset/imgs/icons/plus.svg" alt="plus"></button>
+                <button id="pick_plus" class="plus" type="button"><img src="/asset/imgs/icons/plus.svg" alt="plus"></button>
             </div>
         </div>
     </li>`;

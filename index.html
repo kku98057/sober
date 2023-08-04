@@ -18,17 +18,16 @@
 
 <body>
 
-
     <div class="wrap">
         <header>
         </header>
-        <div class="menu">
+        <div class="menuTop">
         </div>
         <main>
             <section class="hero">
                 <div class="video">
-                    <video autoplay playsinline muted loop>
-                        <source src="./space.mp4">
+                    <video autoplay playsinline muted loop poster="/asset/imgs/space-poster.jpg">
+                        <source src="/space.mp4">
                     </video>
                 </div>
                 <div class="intro text">
@@ -300,6 +299,9 @@
                     </div>
                 </div>
                 <div class="s1_contents">
+                    <div class="main_alarm">
+                        <img src="/asset/imgs/main_alarm.png" alt="main_alarm">
+                    </div>
                     <div class="main_vid">
                         <video autoplay muted loop playsinline>
                             <source src="/main.mp4">
@@ -307,22 +309,22 @@
                     </div>
                     <div class="slider_wrap">
                         <div class="slider">
-                            <div class="slide item-1" style="--i:0">
-                                <img src="/asset/imgs/char/diet.svg" alt="alcohol">
-                            </div>
-                            <div class="slide item-2" style="--i:1">
-                                <img src="/asset/imgs/char/vegan.svg" alt="alcohol">
-                            </div>
-                            <div class="slide item-3" style="--i:2">
+                            <div class="slide " style="--i:0">
                                 <img src="/asset/imgs/char/nonalcoholic.svg" alt="alcohol">
                             </div>
-                            <div class="slide item-4" style="--i:3">
+                            <div class="slide " style="--i:1">
+                                <img src="/asset/imgs/char/diet.svg" alt="alcohol">
+                            </div>
+                            <div class="slide " style="--i:2">
+                                <img src="/asset/imgs/char/vegan.svg" alt="alcohol">
+                            </div>
+                            <div class="slide " style="--i:3">
                                 <img src="/asset/imgs/char/fruit.svg" alt="fruit">
                             </div>
-                            <div class="slide item-5" style="--i:4">
+                            <div class="slide " style="--i:4">
                                 <img src="/asset/imgs/char/premium.svg" alt="premium">
                             </div>
-                            <div class="slide item-6" style="--i:5">
+                            <div class="slide " style="--i:5">
                                 <img src="/asset/imgs/char/item.svg" alt="item">
                             </div>
                         </div>
@@ -349,31 +351,31 @@
                                 <div class="swiper-slide">
                                     <a href="">
                                         <span class="sale_nub">1/5</span>
-                                        <img src="/asset/imgs/sale/sale_poster.png" alt="sale_poster">
+                                        <img src="/asset/imgs/banners/001.png" alt="sale_poster">
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="">
                                         <span class="sale_nub">2/5</span>
-                                        <img src="/asset/imgs/sale/sale_poster.png" alt="sale_poster">
+                                        <img src="/asset/imgs/banners/002.png" alt="sale_poster">
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="">
                                         <span class="sale_nub">3/5</span>
-                                        <img src="/asset/imgs/sale/sale_poster.png" alt="sale_poster">
+                                        <img src="/asset/imgs/banners/003.png" alt="sale_poster">
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="">
                                         <span class="sale_nub">4/5</span>
-                                        <img src="/asset/imgs/sale/sale_poster.png" alt="sale_poster">
+                                        <img src="/asset/imgs/banners/004.png" alt="sale_poster">
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="">
                                         <span class="sale_nub">5/5</span>
-                                        <img src="/asset/imgs/sale/sale_poster.png" alt="sale_poster">
+                                        <img src="/asset/imgs/banners/005.png" alt="sale_poster">
                                     </a>
                                 </div>
                             </div>
@@ -394,7 +396,7 @@
                         </div>
                         <ul class="weekly_contents">
                             <li class="weekly_list">
-                                <a href="">
+                                <a href="/products/">
                                     <div class="weekly_list-img">
                                         <img src="/asset/imgs/hite.png" alt="beer">
                                     </div>
@@ -413,7 +415,7 @@
                                 </a>
                             </li>
                             <li class="weekly_list">
-                                <a href="">
+                                <a href="/products/">
                                     <div class="weekly_list-img">
                                         <img src="/asset/imgs/hite.png" alt="beer">
                                     </div>
@@ -433,7 +435,7 @@
                             </li>
 
                             <li class="weekly_list">
-                                <a href="">
+                                <a href="/products/">
                                     <div class="weekly_list-img">
                                         <img src="/asset/imgs/hite.png" alt="beer">
                                     </div>
@@ -452,7 +454,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <a class="best_btn" href=""><span>BEST10 보러 가기</span></a>
+                        <a class="best_btn" href="/products/"><span>BEST10 보러 가기</span></a>
                     </div>
                 </div>
             </section>
@@ -606,26 +608,24 @@
 
         </footer>
         <div class="bottomTab"></div>
-        <div class="popup2 visible">
+        <div class="pop popup2 visible">
             <div class="popup2_wrap">
                 <div class="close">
                     <img src="/asset/imgs/icons/popup_close.svg" alt="close">
                 </div>
                 <div class="popup2_layout">
-                    <div class="popup2_layout-bg"></div>
-                    <div class="common_title popup_title">
-                        <p class="common_title-sub">룰렛 돌리고 경품 받아가자!</p>
-                        <h3 class="common_title-line">앱 오픈 기념</h3>
-                        <h3 class="common_title-fill">룰렛 이벤트</h3>
-                    </div>
-                    <div class="contents_img">
-                        <img src="/asset/imgs/popup_roulette.png" alt="roulette">
-                    </div>
-                    <a href="/event/roulette.html" class="popup_btn">이벤트 참여하기</a>
+                    <img src="/asset/imgs/popup_img.png" alt="">
+
+                </div>
+                <div class="today">
+                    <label for="today_1">
+                        <input type="checkbox" name="today_1" id="today_1">
+                        <span>오늘은 더 이상 보지않기</span>
+                    </label>
                 </div>
             </div>
         </div>
-        <div class="popup3 visible">
+        <div class="pop popup3 hidden">
             <div class="popup3_wrap">
                 <div class="close">
                     <img src="/asset/imgs/icons/popup_close.svg" alt="close">
@@ -652,12 +652,18 @@
                     <div class="contents_img3">
                         <img src="/asset/imgs/90per.png" alt="90per">
                     </div>
-                    <a href="/event/coupon.html" class="popup_btn">이벤트 참여하기</a>
+                    <a href="/coupon/" class="popup_btn">이벤트 참여하기</a>
+                </div>
+                <div class="today">
+                    <label for="today_2">
+                        <input type="checkbox" name="today_" id="today_2">
+                        <span>오늘은 더 이상 보지않기</span></label>
                 </div>
             </div>
         </div>
+
     </div>
-    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="

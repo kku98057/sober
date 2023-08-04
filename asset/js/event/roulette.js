@@ -19,11 +19,13 @@ const items = async () => {
 
 (async () => {
   const popup = document.querySelector(".popup");
-  const token = Cookies.get("token");
+  const popup2 = document.querySelector(".popup2");
+  const popup_wrap = popup2.querySelector(".popup_wrap");
+  const token = 1;
 
   const gifts = await items();
 
-  let userChance = 0;
+  let userChance = 3;
   let rolLength = gifts.length; // 해당 룰렛 콘텐츠 갯수
   let setNum; // 랜덤숫자 담을 변수
 
@@ -54,11 +56,11 @@ const items = async () => {
     for (let i = 0, len = rolLength; i < len; i++) {
       deg.push((360 / len) * i);
     }
-    console.log(deg);
+
     // 랜덤 생성된 숫자를 히든 인풋에 넣기
     let num = 0;
     setNum = rIndex();
-    console.log(setNum);
+
     // 애니설정
     let ani = setInterval(() => {
       num++;
@@ -78,7 +80,83 @@ const items = async () => {
 
   // 정해진 alert띄우기, custom modal등
   const rLayerPopup = (num) => {
-    alert(`축하드립니다. ${gifts[num].name}에 당첨되셨습니다.`);
+    if (num === 0) {
+      popup_wrap.innerHTML = `
+      <div class="event_img">
+                      <img src="/asset/imgs/airpot_max.png" alt="airpot_max">
+                  </div>
+                  <h3 class="popup2_name">에어팟맥스 당첨!</h3>
+                  <p class="popup2_des">(자세한 사항은 페이지 하단을 참조해주세요)</p>
+                  <div class="event_btns">
+                      <span class="popup2_ok closeBtn">확인</span>
+                  </div>
+                
+      `;
+    } else if (num === 1) {
+      popup_wrap.innerHTML = `
+      <div class="event_img">
+                      <img src="/asset/imgs/airpot_3.png" alt="airpot_3">
+                  </div>
+                  <h3 class="popup2_name">에어팟 3세대 64GB 당첨!</h3>
+                  <p class="popup2_des">(자세한 사항은 페이지 하단을 참조해주세요)</p>
+                  <div class="event_btns">
+                      <span class="popup2_ok closeBtn">확인</span>
+                  </div>
+              
+      `;
+    } else if (num === 2) {
+      popup_wrap.innerHTML = `
+    <div class="event_img">
+                    <img src="/asset/imgs/goods.png" alt="goods">
+                </div>
+                <h3 class="popup2_name">쏘버 굿즈 풀 팩 당첨!</h3>
+                <p class="popup2_des">(자세한 사항은 페이지 하단을 참조해주세요)</p>
+                <div class="event_btns">
+                    <span class="popup2_ok closeBtn">확인</span>
+                </div>
+              
+    `;
+    } else if (num === 3) {
+      popup_wrap.innerHTML = `
+    <div class="event_img">
+                    <img src="/asset/imgs/beer.png" alt="beer">
+                </div>
+                <h3 class="popup2_name">논알콜 맥주 1BOX 당첨!</h3>
+                <p class="popup2_des">(자세한 사항은 페이지 하단을 참조해주세요)</p>
+                <div class="event_btns">
+                    <span class="popup2_ok closeBtn">확인</span>
+                </div>
+          
+    `;
+    } else if (num === 4) {
+      popup_wrap.innerHTML = `
+    <div class="event_img">
+                    <img src="/asset/imgs/5000coupon.png" alt="5000coupon">
+                </div>
+                <h3 class="popup2_name">5천원 쿠폰 당첨!</h3>
+                <p class="popup2_des">(친구 초대하고 더 좋은 경품에 도전하세요!)</p>
+            
+                <div class="event_btns2">
+                    <span class="popup2_roulette closeBtn">룰렛 돌리기</span>
+                    <a class="popup2_move" href="/coupon/coupon.html">쿠폰함 가기</a>
+                </div>
+    `;
+    } else if (num === 5) {
+      popup_wrap.innerHTML = `
+    <div class="event_img">
+                    <img src="/asset/imgs/1000coupon.png" alt="1000coupon">
+                </div>
+                <h3 class="popup2_name">1천원 쿠폰 당첨!</h3>
+                <p class="popup2_des">(친구 초대하고 더 좋은 경품에 도전하세요!)</p>
+          
+                <div class="event_btns2">
+                    <span class="popup2_roulette closeBtn">룰렛 돌리기</span>
+                    <a class="popup2_move" href="/coupon/coupon.html">쿠폰함 가기</a>
+                </div>
+    `;
+    }
+    popup2.classList.add("active");
+    closeBtnHandler();
   };
 
   // reset
@@ -149,5 +227,15 @@ const items = async () => {
   <button type="button" class="confirm_btn"><span>3초만에 가입하고 이벤트 참여하기!</span></button>`;
     }
     conformBtnHandler();
+  };
+
+  // 팝업2 버튼
+  const closeBtnHandler = () => {
+    const closeBtns = document.querySelectorAll(".closeBtn");
+    closeBtns.forEach((closeBtn) => {
+      closeBtn.addEventListener("click", () => {
+        popup2.classList.remove("active");
+      });
+    });
   };
 })();
