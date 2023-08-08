@@ -384,7 +384,7 @@
   background-color: var(--color-green1);
 }
 
-@media all and (max-width: 420px) and (max-height: 900px) {
+@media all and (max-width: 420px) {
   .roulette {
     padding-top: 160px;
   }

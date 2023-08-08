@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="/asset/css/roulette.css">
     <link rel="stylesheet" href="/asset/css/event.css">
     <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.3.0/kakao.min.js"
-        integrity="sha384-70k0rrouSYPWJt7q9rSTKpiTfX6USlMYjZUtr1Du+9o4cGvhPAWxngdtVZDdErlh" crossorigin="anonymous"></script>
+        integrity="sha384-70k0rrouSYPWJt7q9rSTKpiTfX6USlMYjZUtr1Du+9o4cGvhPAWxngdtVZDdErlh"
+        crossorigin="anonymous"></script>
     <script>
         Kakao.init('b2565aa45aaaf613c93d24212cbbde02'); // 사용하려는 앱의 JavaScript 키 입력
     </script>
@@ -37,10 +38,23 @@
                             <div class="roulette_game">
                                 <!-- 룰렛게임 -->
                                 <div class="game">
-
+                                    <div class="panel">
+                                        <div class="pin"><img src="/asset/imgs/pin.png" alt="pin" /></div>
+                                        <div class="game-bg">
+                                            <div class="rouletter-wacu">
+                                                <img src="/asset/imgs/roulette.png" alt="roulette" />
+                                            </div>
+                                        </div>
+                                        <div class="rouletter-arrow"></div>
+                                        <button type="button" class="startBtn2 spin-btn" onclick="startRoulette(5)">
+                                            <span>START!</span>
+                                        </button>
+                                    </div>
                                 </div>
                                 <span>남은 룰렛 돌리기 찬스 <span class="color chance">1</span>회</span>
-                                <button class="startBtn spin-btn" type="button"><span>룰렛 돌리기</span></button>
+                                <button class="startBtn spin-btn" type="button" onclick="startRoulette(5)">
+                                    <span>룰렛 돌리기 </span>
+                                </button>
                             </div>
                         </div>
                     </div>

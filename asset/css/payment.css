@@ -962,7 +962,7 @@
 .okBtn span {
   color: #fff;
 }
-@media all and (max-width: 420px) and (max-height: 900px) {
+@media all and (max-width: 420px) {
   .pay {
     padding-top: 100px;
   }

@@ -122,18 +122,30 @@ if (marquee) {
         <li><img src="/asset/imgs/icons/planet.svg" alt="planet"></li>
         <li><span>현재 5만원 이상 무료배송</span></li>
         <li><img src="/asset/imgs/icons/planet.svg" alt="planet"></li>
-    </ul>
-    <ul class="marquee-line">
         <li><span>오픈이벤트 웰컴 쿠폰팩 9,000원 증정!</span></li>
         <li><img src="/asset/imgs/icons/planet.svg" alt="planet"></li>
         <li><span>룰렛 1회권 증정!</span></li>
         <li><img src="/asset/imgs/icons/planet.svg" alt="planet"></li>
     </ul>
     <ul class="marquee-line">
-        <li><span>ALCOHOL FREE</span></li>
-        <li><img src="/asset/imgs/icons/planet.svg" alt="planet"></li>
-        <li><span>ALCOHOL FREE</span></li>
-        <li><img src="/asset/imgs/icons/planet.svg" alt="planet"></li>
+      <li><span>ALCOHOL FREE</span></li>
+      <li><img src="/asset/imgs/icons/planet.svg" alt="planet"></li>
+      <li><span>현재 5만원 이상 무료배송</span></li>
+      <li><img src="/asset/imgs/icons/planet.svg" alt="planet"></li>
+      <li><span>오픈이벤트 웰컴 쿠폰팩 9,000원 증정!</span></li>
+      <li><img src="/asset/imgs/icons/planet.svg" alt="planet"></li>
+      <li><span>룰렛 1회권 증정!</span></li>
+      <li><img src="/asset/imgs/icons/planet.svg" alt="planet"></li>
+    </ul>
+    <ul class="marquee-line">
+      <li><span>ALCOHOL FREE</span></li>
+      <li><img src="/asset/imgs/icons/planet.svg" alt="planet"></li>
+      <li><span>현재 5만원 이상 무료배송</span></li>
+      <li><img src="/asset/imgs/icons/planet.svg" alt="planet"></li>
+      <li><span>오픈이벤트 웰컴 쿠폰팩 9,000원 증정!</span></li>
+      <li><img src="/asset/imgs/icons/planet.svg" alt="planet"></li>
+      <li><span>룰렛 1회권 증정!</span></li>
+      <li><img src="/asset/imgs/icons/planet.svg" alt="planet"></li>
     </ul>
     </div>`;
 }
@@ -217,7 +229,11 @@ if (menuTop) {
           ${
             token
               ? ` <li>
+<<<<<<< HEAD
                 <a href="">로그아웃</a>
+=======
+                <a href="/bbs/logout.php">로그아웃</a>
+>>>>>>> a8ec9f30ac91b2a7b34c1d05c2a0ded7a59ec579
               </li>`
               : ` <li>
                 <a href="/auth/login.html">로그인</a>
@@ -266,8 +282,11 @@ function backBtn() {
 }
 
 if (document.querySelector(".back")) {
-  const back = document.querySelector(".back");
-  back.addEventListener("click", backBtn);
+  const back = document.querySelector(".back img");
+  back.addEventListener("click", (e) => {
+    e.preventDefault();
+    backBtn();
+  });
 }
 
 // topBtn
@@ -325,3 +344,23 @@ if (rightDiv) {
   </div>
 </div>`;
 }
+
+// 모바일로 전환될때 새로고침
+let hasRefreshed = false;
+let lastWidth = window.innerWidth;
+
+window.addEventListener("resize", () => {
+  const windowWidth = window.innerWidth;
+
+  if (
+    ((windowWidth > 420 && lastWidth <= 420) ||
+      (windowWidth <= 420 && lastWidth > 420)) &&
+    !hasRefreshed
+  ) {
+    console.log(lastWidth, windowWidth);
+    hasRefreshed = true; // 새로고침 상태를 업데이트합니다.
+    location.reload(); // 페이지를 새로고침합니다.
+  }
+
+  lastWidth = windowWidth;
+});

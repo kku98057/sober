@@ -24,7 +24,6 @@ const next = document.querySelector(".next");
 const prev = document.querySelector(".prev");
 const body = document.querySelector("body");
 const names = ["논알콜", "저칼로리", "비건", "과실", "프리미엄", "아이템"];
-
 let selected_item = 0;
 
 function setItemSlider(index) {
@@ -76,7 +75,7 @@ prev.addEventListener("click", () => {
 });
 
 // popup
-// popup
+
 const pops = document.querySelectorAll(".pop");
 
 if (pops) {
@@ -131,7 +130,6 @@ let height = document
   .querySelector(".intro_overlay")
   .getBoundingClientRect().height;
 ScrollTrigger.saveStyles(".intro_overlay");
-
 ScrollTrigger.matchMedia({
   "(min-width:421px)": () => {
     slides.forEach((slide, idx) => {
@@ -238,6 +236,8 @@ ScrollTrigger.matchMedia({
 
 // timer
 let timerInterval;
+const popup3 = document.querySelector(".popup3");
+
 function updateTimer() {
   const future = new Date("2023/07/26 10:07:59");
   const now = new Date();
@@ -264,8 +264,9 @@ function updateTimer() {
     ".timer"
   ).innerHTML = `  <span class="hours">${h}</span>:<span class="minute">${m}</span>:<span class="second">${s}</span>`;
 }
-
-timerInterval = setInterval(updateTimer, 1000);
+if (popup3) {
+  timerInterval = setInterval(updateTimer, 1000);
+}
 // review
 const getReview = async () => {
   return axios.get("/asset/dummy/review.json").then((res) => res.data);
@@ -354,3 +355,282 @@ const getReview = async () => {
     slidesPerView: 1.1,
   });
 })();
+
+// interations
+const titleAnimation = () => {
+  ScrollTrigger.saveStyles(".title-animation, .review_title");
+  ScrollTrigger.matchMedia({
+    "(min-width:421px)": () => {
+      const titles = gsap.utils.toArray(".title-animation, .review_title");
+      titles.forEach((title) => {
+        const tl = gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: title,
+              start: "0 70%",
+              toggleActions: "play reverse play reverse",
+            },
+          })
+          .from(title.querySelector(".common_title-line"), {
+            opacity: 0,
+            yPercent: 25,
+          })
+          .from(
+            title.querySelector(".common_title-fill"),
+            { opacity: 0, yPercent: 25 },
+            ">-0.25"
+          )
+          .from(
+            title.querySelector(".common_title-sub"),
+            { yPercent: 50, opacity: 0 },
+            ">-0.25"
+          );
+      });
+    },
+    "(max-width:420px)": () => {
+      const titles = gsap.utils.toArray(".title-animation");
+      titles.forEach((title) => {
+        const tl = gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: title,
+              start: "0 70%",
+              toggleActions: "play reverse play reverse",
+            },
+          })
+          .from(title.querySelector(".common_title-line"), {
+            opacity: 0,
+            yPercent: 25,
+          })
+          .from(
+            title.querySelector(".common_title-fill"),
+            { opacity: 0, yPercent: 25 },
+            ">-0.25"
+          )
+          .from(
+            title.querySelector(".common_title-sub"),
+            { yPercent: 50, opacity: 0 },
+            ">-0.25"
+          );
+      });
+    },
+  });
+};
+const saleAnimation = () => {
+  ScrollTrigger.saveStyles(".sale_marquee, .sale .sale_slides");
+  ScrollTrigger.matchMedia({
+    all: () => {
+      const tl = gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".sale",
+            toggleActions: "play reverse play reverse",
+            start: "0 70%",
+          },
+        })
+
+        .from(".sale_marquee", {
+          opacity: 0,
+        })
+        .from(
+          ".sale .sale_slides",
+          {
+            opacity: 0,
+          },
+          ">-0.75"
+        );
+    },
+  });
+};
+const weeklyAnimation = () => {
+  ScrollTrigger.saveStyles(".weekly_list");
+  ScrollTrigger.matchMedia({
+    all: () => {
+      const lists = gsap.utils.toArray(".weekly_list");
+      lists.forEach((list) => {
+        const tl = gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: list,
+              start: "0 70%",
+              toggleActions: "play reverse play reverse",
+            },
+          })
+          .from(list, {
+            opacity: 0,
+            duration: 1,
+            ease: "power4.inout",
+          });
+      });
+      const tl = gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".best_btn",
+            start: "0 70%",
+            toggleActions: "play reverse play reverse",
+          },
+        })
+        .from(".best_btn", {
+          opacity: 0,
+          duration: 1,
+          ease: "power4.inout",
+        });
+    },
+  });
+};
+const reviewAnimation = () => {
+  ScrollTrigger.matchMedia({
+    "(min-width:421px)": () => {
+      const tl = gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".review_wrap",
+            start: "0 70%",
+            toggleActions: "play reverse play reverse",
+          },
+        })
+        .from(".review_slider", {
+          opacity: 0,
+          duration: 1,
+          ease: "power4.inout",
+        });
+    },
+  });
+};
+// transitions
+const transitionsAnimation = () => {
+  class CanvasAni {
+    constructor(canvas, ctx, total, imgSrc) {
+      this.canvas = canvas;
+      this.ctx = ctx;
+      this.frames = {
+        frame: 0,
+      };
+      this.total = total;
+      this.imgSrc = imgSrc;
+      this.imgs = [];
+
+      this.canvas.width = window.innerWidth;
+      this.canvas.height = window.innerHeight;
+
+      // 이미지 배열에 추가
+      for (let i = 0; i < total; i++) {
+        const img = new Image();
+        img.src = this.imgSrc(i);
+        this.imgs.push(img);
+      }
+
+      this.load();
+
+      window.addEventListener("resize", () => {
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+
+        this.render();
+      });
+    }
+    animate() {
+      ScrollTrigger.matchMedia({
+        "(max-width:420px)": () => {
+          const tl = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: "article",
+                scrub: 1,
+                pin: true,
+                end: `+=${window.innerWidth * 10}`,
+              },
+            })
+            .from(".transitions", {
+              opacity: 0,
+            })
+            .to(
+              this.frames,
+              {
+                duration: 10,
+                onUpdate: () => {
+                  this.render();
+                },
+                frame: this.total - 1,
+                snap: "frame",
+                ease: "none",
+              },
+              1
+            )
+            .to(".transitions", {
+              opacity: 0,
+            })
+            .from(".review", {
+              opacity: 0,
+            })
+            .to({}, {});
+        },
+      });
+    }
+    resize() {
+      this.canvas.width = window.innerWidth;
+      this.canvas.height = window.innerHeight;
+    }
+    load() {
+      this.imgs[0].addEventListener("load", () => {
+        this.render();
+      });
+    }
+    render() {
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+      this.ctx.drawImage(
+        this.imgs[this.frames.frame],
+        window.innerWidth <= 600
+          ? window.innerWidth / 2 - this.canvas.width
+          : 0,
+        0,
+        window.innerWidth <= 600 ? this.canvas.width * 2 : this.canvas.width,
+        this.canvas.height
+      );
+    }
+  }
+
+  const can = document.querySelector("#imgVid");
+
+  const ctx = can.getContext("2d");
+
+  const imgSrc = (index) => `/asset/imgs/frames/${(index + 1).toString()}.jpg`;
+
+  const canAni1 = new CanvasAni(can, ctx, 148, imgSrc);
+
+  canAni1.animate();
+};
+const patternAnimation = () => {
+  ScrollTrigger.matchMedia({
+    all: () => {
+      const tl = gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".pattern_img",
+            start: "0 70%",
+            toggleActions: "play reverse play reverse",
+          },
+        })
+        .from(".pattern_img", {
+          opacity: 0,
+          duration: 1,
+          ease: "power4.inout",
+        })
+        .from(
+          ".pattern_btn",
+          {
+            opacity: 0,
+            duration: 1,
+            ease: "power4.inout",
+          },
+          ">-0.75"
+        );
+    },
+  });
+};
+titleAnimation();
+saleAnimation();
+weeklyAnimation();
+reviewAnimation();
+transitionsAnimation();
+patternAnimation();

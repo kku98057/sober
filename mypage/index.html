@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/asset/css/reset.css">
+    <link rel="stylesheet" href="/asset/css/common.css">
+    <link rel="stylesheet" href="/asset/css/mypage/my.css">
+    <title>마이페이지</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <header></header>
+        <div class="menuTop"></div>
+        <main>
+            <section class="my">
+                <div class="container">
+                    <div class="my_wrap">
+                        <div class="my_title">
+                            <h3>마이쏘버</h3>
+                            <img src="/asset/imgs/char/char_4.svg" alt="char_4">
+                        </div>
+                        <div class="my_data">
+                            <div class="my_data-name">
+                                <span class="nickname">김쏘버님</span>
+                                <span class="nick-update">수정</span>
+                            </div>
+                            <div class="my_data-progress">
+                                <div class="bar"></div>
+                            </div>
+                            <div class="my_data-grade">
+                                <p><span class="my_grade">VIP</span>까지 <span class="my_point">100<span class="my_point-text">점</span></span> 남았어요!</p>
+                                <a href=""><span>등급 자세히 보기</span><img src="/asset/imgs/icons/grade-arrow.png" alt="grade-arrow"></a>
+                            </div>
+                        </div>
+                        <div class="my_contents">
+                            <a href="" class="my_content">
+                                <span>상품리뷰</span>
+                                <span class="review_length">5</span>
+                            </a>
+                            <a href="" class="my_content">
+                                <span>포인트</span>
+                                <span class="point_length">12,550</span>
+                            </a>
+                            <a href="" class="my_content">
+                                <span>쿠폰</span>
+                                <span class="coupon_length">3</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="order">
+                <h3>주문/배송 조회</h3>
+                <div class="order_now">
+                    <ul>
+                        <li>
+                            <a href="">
+                                <span>0</span>
+                                <span>구매 완료</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>1</span>
+                                <span>배송 준비중</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>0</span>
+                                <span>배송중</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>0</span>
+                                <span>배송 완료</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="lists">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <a href="">
+                                <span>배송지</span>
+                                <img src="/asset/imgs/icons/grade-arrow.png" alt="배송지">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>쿠폰함</span>
+                                <img src="/asset/imgs/icons/grade-arrow.png" alt="쿠폰함">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>내가 쓴 리뷰</span>
+                                <img src="/asset/imgs/icons/grade-arrow.png" alt="내가 쓴 리뷰">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>찜한 상품</span>
+                                <img src="/asset/imgs/icons/grade-arrow.png" alt="찜한 상품">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>내 정보 관리</span>
+                                <img src="/asset/imgs/icons/grade-arrow.png" alt="내 정보 관리">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>앱 설정</span>
+                                <img src="/asset/imgs/icons/grade-arrow.png" alt="앱 설정">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+        <footer></footer>
+        <div class="bottomTab"></div>
+        <div class="popup ">
+            <div class="popup_wrap">
+                <h3>닉네임 변경</h3>
+                <input type="text" placeholder="닉네임을 입력하세요." class="nick_changer">
+                <span class="popup_text_validation">닉네임은 2~7자리 한글,영문,숫자만 가능해요.</span>
+                <div class="popup_btns">
+                    <button type="button" class="nick_cancle"><span>취소</span></button>
+                    <button type="button" class="nick_change"><span>확인</span></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="
+https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
+"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/asset/js/common.js"></script>
+    <script src="/asset/js/my.js"></script>
+
+</body>
+
+</html>
