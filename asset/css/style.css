@@ -649,12 +649,10 @@ svg {
 }
 .popup3_layout {
   width: 90%;
-  border: 2px solid var(--color-green2);
-  padding: 36px 0 32px 0;
+
   overflow: hidden;
   border-radius: 10px;
   position: relative;
-  background-color: #000000;
 }
 .popup_title {
   position: relative;
@@ -686,21 +684,6 @@ svg {
   left: 0;
   background-color: #000000;
   animation: bg 2s infinite linear alternate;
-}
-.popup3_layout:after,
-.popup3_layout::before {
-  width: 100%;
-  position: absolute;
-  content: "";
-  background: url(./imgs/popup_pattern.png) no-repeat center/contain;
-  height: 25px;
-  left: 0;
-}
-.popup3_layout:after {
-  top: -7px;
-}
-.popup3_layout::before {
-  bottom: -7px;
 }
 .timer {
   height: 43px;

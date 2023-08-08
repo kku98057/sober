@@ -237,36 +237,36 @@ ScrollTrigger.matchMedia({
 // timer
 let timerInterval;
 const popup3 = document.querySelector(".popup3");
+// if (popup3) {
+//   function updateTimer() {
+//     const future = new Date("2023/07/26 10:07:59");
+//     const now = new Date();
 
-function updateTimer() {
-  const future = new Date("2023/07/26 10:07:59");
-  const now = new Date();
+//     const diff = future - now;
 
-  const diff = future - now;
+//     const totalHours = Math.floor(diff / (1000 * 60 * 60));
+//     const mins = Math.floor((diff / (1000 * 60)) % 60);
+//     const secs = Math.floor((diff / 1000) % 60);
 
-  const totalHours = Math.floor(diff / (1000 * 60 * 60));
-  const mins = Math.floor((diff / (1000 * 60)) % 60);
-  const secs = Math.floor((diff / 1000) % 60);
+//     const h = totalHours.toString().padStart(2, "0");
+//     const m = mins.toString().padStart(2, "0");
+//     const s = secs.toString().padStart(2, "0");
 
-  const h = totalHours.toString().padStart(2, "0");
-  const m = mins.toString().padStart(2, "0");
-  const s = secs.toString().padStart(2, "0");
+//     if (diff <= 0) {
+//       clearInterval(timerInterval);
+//       document.querySelector(
+//         ".timer"
+//       ).innerHTML = `  <span class="hours">00</span>:<span class="minute">00</span>:<span class="second">00</span>`;
+//       return;
+//     }
 
-  if (diff <= 0) {
-    clearInterval(timerInterval);
-    document.querySelector(
-      ".timer"
-    ).innerHTML = `  <span class="hours">00</span>:<span class="minute">00</span>:<span class="second">00</span>`;
-    return;
-  }
+//     document.querySelector(
+//       ".timer"
+//     ).innerHTML = `  <span class="hours">${h}</span>:<span class="minute">${m}</span>:<span class="second">${s}</span>`;
+//   }
 
-  document.querySelector(
-    ".timer"
-  ).innerHTML = `  <span class="hours">${h}</span>:<span class="minute">${m}</span>:<span class="second">${s}</span>`;
-}
-if (popup3) {
-  timerInterval = setInterval(updateTimer, 1000);
-}
+//   timerInterval = setInterval(updateTimer, 1000);
+// }
 // review
 const getReview = async () => {
   return axios.get("/asset/dummy/review.json").then((res) => res.data);
